@@ -1,0 +1,13 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "selector-pseudo-element-colon-notation": "single",
+    "declaration-colon-newline-after": null,
+    "selector-pseudo-class-no-unknown": null,
+    "declaration-block-trailing-semicolon": null
+  },
+  "ignoreFiles": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
+}

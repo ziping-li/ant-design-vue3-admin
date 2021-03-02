@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "removeComments": false,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "target": "es5",
+    "declaration": true,
+    "lib": ["dom", "es2018"],
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
+    "skipLibCheck": true,
+    "outDir": "./dist"
+  },
+  "exclude": ["./node_modules", "./dist"]
+}
