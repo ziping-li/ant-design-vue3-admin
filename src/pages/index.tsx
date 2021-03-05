@@ -3,7 +3,9 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   setup() {
     return () => (
-      <div>Convue</div>
+      <div>
+        <a-button type="primary">button</a-button>
+      </div>
     );
   },
 });

@@ -1,0 +1,39 @@
+import { computed, defineComponent } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { TranslationOutlined } from '@ant-design/icons-vue';
+
+export default defineComponent({
+  setup() {
+    let { locale } = useI18n();
+
+    const selectedKeys = computed(() => [locale.value]);
+
+    const onSelectChange = ({ key }: any) => {
+      locale.value = key;
+    };
+    return () => (
+      <a-dropdown
+        trigger={['hover']}
+        placement="bottomRight"
+        v-slots={{
+          default: () => (
+            <div class="section hover">
+              <TranslationOutlined style={{ fontSize: '16px' }} />
+            </div>
+          ),
+          overlay: () => (
+            <a-menu
+              slot="overlay"
+              selectable
+              selected-keys={selectedKeys.value}
+              onSelect={onSelectChange}
+            >
+              <a-menu-item key="zh-CN">{$t('CHINESE')}</a-menu-item>
+              <a-menu-item key="en-US">{$t('ENGLISH')}</a-menu-item>
+            </a-menu>
+          ),
+        }}
+      />
+    );
+  },
+});

@@ -1,0 +1,44 @@
+html,
+body,
+iframe,
+#app,
+#app > div {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+  touch-action: manipulation;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Arial, sans-serif;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity, transform 0.15s ease-in-out;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}

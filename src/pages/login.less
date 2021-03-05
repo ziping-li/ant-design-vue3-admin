@@ -1,0 +1,70 @@
+.auth-layouts {
+  position: relative;
+  height: 100%;
+  background: url('/bg.jpg') no-repeat center center;
+  background-size: cover;
+
+  .switch-lang {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #4aa271;
+    }
+  }
+
+  .page {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    width: 440px;
+    max-width: 100%;
+    transform: translate(0, -50%);
+    padding: 20px 24px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      background: url('/logo.png') no-repeat center center;
+      background-size: contain;
+    }
+
+    .description {
+      text-align: center;
+      margin: 12px 0 16px;
+      color: rgba(0, 0, 0, 0.45);
+    }
+  }
+
+  .ant-input-affix-wrapper,
+  .ant-input-affix-wrapper > input.ant-input,
+  .ant-btn-primary[disabled] {
+    background: transparent !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .auth-layouts {
+    background: #fff;
+
+    .switch-lang {
+      right: 40px;
+      color: rgba(0, 0, 0, 0.65);
+    }
+
+    .page {
+      right: 50%;
+      transform: translate(50%, -50%);
+      padding: 0 15px;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+}

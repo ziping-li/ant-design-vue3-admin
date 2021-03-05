@@ -1,4 +1,5 @@
 import { defineComponent } from 'vue';
+import './App.less';
 
 export default defineComponent({
   name: 'App',
