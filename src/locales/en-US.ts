@@ -17,4 +17,9 @@ export default {
     LoginSuccess: "Login Success",
     WelcomeToLogin: 'Hello, welcome to Ant Design Admin!'
   },
+  404: {
+    Description: "Sorry, the page you visited does not exist.",
+    BackHome: "Back Home",
+    ReturnPrevious: "Go Back"
+  }
 };

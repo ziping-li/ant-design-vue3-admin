@@ -2196,10 +2196,10 @@ convert-source-map@^1.1.0, convert-source-map@^1.7.0:
   dependencies:
     safe-buffer "~5.1.1"
 
-convue@1.1.7:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/convue/-/convue-1.1.7.tgz#1ebbd45bedadd5d5e3b26e486cf74b69f276295f"
-  integrity sha512-1AIEwcekU5i1FT68slCrA5t1QmwHdEZaRv/9SBhY5SJhH+W0ITlQf+jfX/77INcnpoOHbTXs/u7Cmh7sr4q05Q==
+convue@1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/convue/-/convue-1.1.8.tgz#36d2b5c3544d2e42ee396de537cf2e52ff9bfbfd"
+  integrity sha512-9XxPpzdda8LbItXOzVkksuZFl3PXugqwPRa0RAWbVVKAY9MhWZ99sPGTcRnaDVr6HUZxdqZN9uYaZ/VuiRGoWw==
   dependencies:
     "@vue/compiler-sfc" "^3.0.5"
     chalk "^4.1.0"
