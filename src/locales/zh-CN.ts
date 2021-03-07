@@ -18,8 +18,9 @@ export default {
     LoginSuccess: '登录成功',
     WelcomeToLogin: '您好，欢迎使用 Ant Design Admin ！',
   },
-  404: {
-    Description: '抱歉，您访问的页面不存在。',
+  ErrorPage: {
+    403: '抱歉，您无权访问此页面。',
+    404: '抱歉，您访问的页面不存在。',
     BackHome: '回到首页',
     ReturnPrevious: '返回上一页',
   },

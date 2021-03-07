@@ -2,9 +2,7 @@ import { UserConfigExport, ConfigEnv } from 'vite';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { viteMockServe } from 'vite-plugin-mock';
 import convue from 'convue';
-
-const PRIMARY_COLOR = '#4aa271';
-const MOCK_SERVER_PROD_ENABLE = true;
+import { i18nUseCookie, primaryColor, mockServerProdEnable } from './src/config/constants';
 
 export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
@@ -13,7 +11,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         less: {
           javascriptEnabled: true,
           modifyVars: {
-            'primary-color': PRIMARY_COLOR,
+            'primary-color': primaryColor,
           },
         },
       },
@@ -23,16 +21,16 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
       viteMockServe({
         mockPath: 'mock',
         localEnabled: command === 'serve',
-        prodEnabled: command !== 'serve' && MOCK_SERVER_PROD_ENABLE,
+        prodEnabled: command !== 'serve' && mockServerProdEnable,
         logger: true,
       }),
       ...convue({
         head: {
           title: 'Ant Design Admin',
         },
-        loading: PRIMARY_COLOR,
+        loading: primaryColor,
         progress: {
-          color: PRIMARY_COLOR,
+          color: primaryColor,
         },
         page: {
           router: {
@@ -42,10 +40,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
           },
         },
         locale: {
-          useCookie: {
-            cookieKey: 'ant_design_vue3_admin_i18n',
-            expires: 365,
-          },
+          useCookie: i18nUseCookie,
         },
         styles: ['ant-design-vue/dist/antd.less', '@convue-lib/styles'],
         modules: ['ant-design-vue', '@convue-lib/container'],

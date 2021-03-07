@@ -3,7 +3,7 @@
   meta:
     layout: empty
     head:
-      title: Ant Design Admin - 404
+      title: Ant Design Admin - 403
 </route> */
 }
 
@@ -18,9 +18,9 @@ export default defineComponent({
     return () => (
       <div class="pt-12">
         <a-result
-          status="404"
-          title="404"
-          sub-title={t('ErrorPage.404')}
+          status="403"
+          title="403"
+          sub-title={t('ErrorPage.403')}
           v-slots={{
             extra: () => (
               <a-space>

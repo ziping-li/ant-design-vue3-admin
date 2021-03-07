@@ -1,6 +1,7 @@
 {
   /* <route>
   meta:
+    layout: empty
     head:
       title: t('Login.Title')
 </route> */
@@ -32,10 +33,18 @@ export default defineComponent({
     });
     const rules = reactive({
       username: [
-        { required: true, trigger: 'change', message: t('FormValidate.Required', { field: t('Login.Username') }) },
+        {
+          required: true,
+          trigger: 'change',
+          message: t('FormValidate.Required', { field: t('Login.Username') }),
+        },
       ],
       password: [
-        { required: true, trigger: 'change', message: t('FormValidate.Required', { field: t('Login.Password') }) },
+        {
+          required: true,
+          trigger: 'change',
+          message: t('FormValidate.Required', { field: t('Login.Password') }),
+        },
       ],
     });
 

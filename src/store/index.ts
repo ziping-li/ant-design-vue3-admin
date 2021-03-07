@@ -1,7 +1,10 @@
 import { MutationTree, ActionTree, ActionContext } from 'vuex';
+import Cookies from 'js-cookie';
+import { userToken } from '../config/constants';
 
-// User data types
+// Request Data Types
 const LOGIN_URL = '/login';
+const QUERY_URL = '/queryUserInfo';
 export interface LoginParams {
   username: string;
   password: string;
@@ -38,6 +41,7 @@ const mutations: MutationTree<State> & Mutations = {
 // Actions
 export enum ActionTypes {
   LOGIN = 'LOGIN',
+  QUERY = 'QUERY',
 }
 
 type AugmentedActionContext = {
@@ -49,12 +53,25 @@ type AugmentedActionContext = {
 
 interface Actions {
   [ActionTypes.LOGIN]({ commit }: AugmentedActionContext, payload: LoginParams): Promise<any>;
+  [ActionTypes.QUERY]({ commit }: AugmentedActionContext, id: number): Promise<any>;
 }
 
 const actions: ActionTree<State, State> & Actions = {
   async [ActionTypes.LOGIN]({ commit }, payload: LoginParams) {
     const { data } = await this.$request.post(LOGIN_URL, payload);
-    commit(MutationTypes.SET_USERINFO, data || {});
+    if (data) {
+      commit(MutationTypes.SET_USERINFO, data);
+      Cookies.set(userToken, data.id.toString(), {
+        expires: 1,
+      });
+    }
+  },
+
+  async [ActionTypes.QUERY]({ commit }, id: number) {
+    const { data } = await this.$request.get(QUERY_URL, { params: { id } });
+    if (data) {
+      commit(MutationTypes.SET_USERINFO, data);
+    }
   },
 };
 

@@ -42,7 +42,7 @@ export default [
     response: ({ query }) => {
       console.log('id>>>>>>>>', query.id);
 
-      const userInfo = userSchema.find((item) => item.id === query.id);
+      const userInfo = userSchema.find((item) => item.id === Number(query.id));
 
       // 用户不存在
       if (!userInfo) {
