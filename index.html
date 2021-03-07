@@ -14,6 +14,10 @@
       import { createApp } from 'vue';
       import App from './src/App';
       import convue from 'convue-package';
+      import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer';
+      import userMock from './mock/user';
+
+      createProdMockServer([...userMock]);
 
       const app = createApp(App);
 

@@ -28,8 +28,8 @@ export default defineComponent({
               selected-keys={selectedKeys.value}
               onSelect={onSelectChange}
             >
-              <a-menu-item key="zh-CN">{$t('CHINESE')}</a-menu-item>
-              <a-menu-item key="en-US">{$t('ENGLISH')}</a-menu-item>
+              <a-menu-item key="zh-CN">{$t('Chinese')}</a-menu-item>
+              <a-menu-item key="en-US">{$t('English')}</a-menu-item>
             </a-menu>
           ),
         }}

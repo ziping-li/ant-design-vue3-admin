@@ -5,9 +5,7 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     onBeforeMount(() => {
-      router.replace('/dashboard');
+      router.replace("/dashboard");
     });
-
-    return () => <div></div>;
   },
 });

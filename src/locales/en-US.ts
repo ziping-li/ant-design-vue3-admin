@@ -1,12 +1,20 @@
 export default {
-  CHINESE: "简体中文",
-  ENGLISH: "English",
+  Chinese: "简体中文",
+  English: "English",
+  ApiError: {
+    E_00001: 'User does not exist~',
+    E_00002: 'Incorrect password~',
+  },
+  FormValidate: {
+    Required: "{field} is required"
+  },
   Login: {
     Title: 'Ant Design Admin - Login',
     Description: 'Welcome to Ant Design Admin, Please login',
     Username: 'Username',
     Password: 'Password',
     Login: "Login",
-    Error: "Username or password is wrong~",
+    LoginSuccess: "Login Success",
+    WelcomeToLogin: 'Hello, welcome to Ant Design Admin!'
   },
 };

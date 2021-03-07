@@ -5,12 +5,14 @@
       title: t('Login.Title')
 </route> */
 }
-import { defineComponent, reactive } from 'vue';
+import { defineComponent, computed, ref, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
+import { useStore } from 'vuex';
+import { notification } from 'ant-design-vue';
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
-import { message } from 'ant-design-vue';
 import './login.less';
+import { ActionTypes } from '../store/index';
 
 export default defineComponent({
   components: {
@@ -20,17 +22,33 @@ export default defineComponent({
   setup() {
     const { t } = useI18n();
     const router = useRouter();
+    const { state, dispatch } = useStore();
 
+    const loginForm = ref(null);
+    const loading = computed(() => state['@@loading'].effects[ActionTypes.LOGIN]);
     const formState: Record<string, string> = reactive({
-      user: 'admin',
+      username: 'admin',
       password: '123456',
     });
+    const rules = reactive({
+      username: [
+        { required: true, trigger: 'change', message: t('FormValidate.Required', { field: t('Login.Username') }) },
+      ],
+      password: [
+        { required: true, trigger: 'change', message: t('FormValidate.Required', { field: t('Login.Password') }) },
+      ],
+    });
 
-    const handleFinish = () => {
-      if (formState.user === 'admin' && formState.password === '123456') {
+    const handleFinish = async () => {
+      try {
+        await dispatch(ActionTypes.LOGIN, formState);
+        notification.success({
+          message: t('Login.LoginSuccess'),
+          description: t('Login.WelcomeToLogin'),
+        });
         router.push({ path: '/' });
-      } else {
-        message.error(t('Login.Error'));
+      } catch (err) {
+        console.log(err);
       }
     };
 
@@ -41,18 +59,25 @@ export default defineComponent({
         </div>
         <div class="page">
           <div class="logo" />
-          <div class="description">{$t('Login.Description')}</div>
+          <div class="description">{t('Login.Description')}</div>
           <div class="login-page">
-            <a-form layout="vertical" model={formState} onFinish={handleFinish}>
-              <a-form-item>
+            <a-form
+              layout="vertical"
+              ref={loginForm}
+              model={formState}
+              rules={rules}
+              onFinish={handleFinish}
+            >
+              <a-form-item name="username">
                 <a-input
-                  v-model={[formState.user, 'value']}
+                  v-model={[formState.username, 'value']}
                   size="large"
                   v-slots={{ prefix: () => <UserOutlined style="color: rgba(0, 0, 0, 0.25)" /> }}
-                  placeholder={$t('Login.Username')}
+                  placeholder={t('Login.Username')}
+                  autocomplete="off"
                 ></a-input>
               </a-form-item>
-              <a-form-item>
+              <a-form-item name="password">
                 <a-input
                   v-model={[formState.password, 'value']}
                   type="password"
@@ -60,7 +85,8 @@ export default defineComponent({
                   v-slots={{
                     prefix: () => <LockOutlined style="color: rgba(0, 0, 0, 0.25)" />,
                   }}
-                  placeholder={$t('Login.Password')}
+                  placeholder={t('Login.Password')}
+                  autocomplete="off"
                 ></a-input>
               </a-form-item>
               <a-form-item>
@@ -69,9 +95,9 @@ export default defineComponent({
                   html-type="submit"
                   size="large"
                   block
-                  disabled={!formState.user || !formState.password}
+                  loading={loading.value}
                 >
-                  {$t('Login.Login')}
+                  {t('Login.Login')}
                 </a-button>
               </a-form-item>
             </a-form>
