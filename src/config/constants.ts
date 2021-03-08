@@ -1,9 +1,9 @@
+export const primaryColor = '#4aa271';
+
 export const i18nUseCookie = {
   cookieKey: 'ant_design_vue3_admin_i18n',
   expires: 365,
 };
-
-export const primaryColor = '#4aa271';
 
 export const mockServerProdEnable = true;
 

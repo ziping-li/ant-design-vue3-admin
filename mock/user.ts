@@ -1,5 +1,5 @@
 import { MockMethod } from 'vite-plugin-mock';
-import userSchema from '../schema/user';
+import userSchema from '../schemes/user';
 
 export default [
   // 用户登录

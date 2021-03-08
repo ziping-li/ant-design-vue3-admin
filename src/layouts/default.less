@@ -1,0 +1,77 @@
+#layout {
+  height: 100%;
+}
+
+.layout-asider,
+.layout-drawer .ant-drawer-body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 99;
+  padding: 0;
+  height: 100%;
+  background-color: #191a23;
+  box-shadow: 2px 0 6px rgb(0 21 41 / 35%);
+
+  .ant-layout-sider-children {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 64px;
+    line-height: 64px;
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 1px solid #101117;
+
+    img {
+      height: 32px;
+    }
+
+    .title {
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+
+  .ant-menu-dark {
+    background-color: #191a23;
+  }
+
+  .ant-menu-dark .ant-menu-sub {
+    background: #101117;
+  }
+}
+
+.layout-header {
+  background-color: #fff;
+  box-shadow: 0 2px 8px #f0f1f2;
+  position: relative;
+  z-index: 10;
+  max-width: 100%;
+  padding: 0;
+
+  .trigger {
+    font-size: 16px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: @primary-color;
+    }
+  }
+}
+
+.layout-content {
+  background-color: #fff;
+  padding: 30px;
+}

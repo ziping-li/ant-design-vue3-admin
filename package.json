@@ -34,7 +34,7 @@
     "@vuedx/typescript-plugin-vue": "^0.6.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "convue": "1.1.8",
+    "convue": "1.2.0",
     "css-loader": "^4.2.1",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
@@ -58,7 +58,7 @@
     "vue-loader": "^16.0.0-beta.7"
   },
   "dependencies": {
-    "@convue-lib/container": "^0.1.12",
+    "@convue-lib/scroll": "0.1.13",
     "@convue-lib/styles": "^0.1.12",
     "@convue-lib/utils": "^0.1.12",
     "ant-design-vue": "^2.0.1",

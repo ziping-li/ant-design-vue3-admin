@@ -4,7 +4,7 @@ import { TranslationOutlined } from '@ant-design/icons-vue';
 
 export default defineComponent({
   setup() {
-    let { locale } = useI18n();
+    let { locale, t } = useI18n();
 
     const selectedKeys = computed(() => [locale.value]);
 
@@ -28,8 +28,8 @@ export default defineComponent({
               selected-keys={selectedKeys.value}
               onSelect={onSelectChange}
             >
-              <a-menu-item key="zh-CN">{$t('Chinese')}</a-menu-item>
-              <a-menu-item key="en-US">{$t('English')}</a-menu-item>
+              <a-menu-item key="zh-CN">{t('Chinese')}</a-menu-item>
+              <a-menu-item key="en-US">{t('English')}</a-menu-item>
             </a-menu>
           ),
         }}

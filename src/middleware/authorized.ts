@@ -11,7 +11,7 @@ export default async ({ route, store, redirect }: any) => {
     } else {
       if (!store.state.userInfo.id) {
         try {
-          await store.dispatch(ActionTypes.QUERY, Number(userId));
+          await store.dispatch(ActionTypes.QUERY, userId);
         } catch (err) {
           logout();
         }

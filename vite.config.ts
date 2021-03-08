@@ -43,7 +43,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
           useCookie: i18nUseCookie,
         },
         styles: ['ant-design-vue/dist/antd.less', '@convue-lib/styles'],
-        modules: ['ant-design-vue', '@convue-lib/container'],
+        modules: ['ant-design-vue'],
       }),
     ],
   };
