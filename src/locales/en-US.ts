@@ -8,8 +8,13 @@ export default {
   FormValidate: {
     Required: '{field} is required',
   },
+  Components: {
+    PersonalCenter: 'Personal Center',
+    PersonalSetting: 'Personal Setting',
+    Logout: 'Logout',
+  },
   Login: {
-    Title: 'Ant Design Admin - Login',
+    Title: 'Login - Ant Design Admin',
     Description: 'Welcome to Ant Design Admin, Please login',
     Username: 'Username',
     Password: 'Password',
@@ -22,5 +27,8 @@ export default {
     404: 'Sorry, the page you visited does not exist.',
     BackHome: 'Back Home',
     ReturnPrevious: 'Go Back',
+  },
+  Overview: {
+    Title: 'Overview - Ant Design Admin',
   },
 };

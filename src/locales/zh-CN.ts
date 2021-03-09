@@ -8,8 +8,13 @@ export default {
   FormValidate: {
     Required: '{field}是必填的',
   },
+  Components: {
+    PersonalCenter: '个人中心',
+    PersonalSetting: '个人设置',
+    Logout: '退出登录',
+  },
   Login: {
-    Title: 'Ant Design Admin - 登录',
+    Title: '登录 - Ant Design Admin',
     Description: '欢迎来到 Ant Design Admin, 请登录',
     Username: '用户名',
     Password: '密码',
@@ -23,5 +28,8 @@ export default {
     404: '抱歉，您访问的页面不存在。',
     BackHome: '回到首页',
     ReturnPrevious: '返回上一页',
+  },
+  Overview: {
+    Title: '总览 - Ant Design Admin',
   },
 };

@@ -27,6 +27,15 @@ export default defineComponent({
         ) : (
           <menu-fold-outlined class="trigger" onClick={toggle} />
         )}
+
+        <a-space>
+          <head-item>
+            <avatar-dropdown></avatar-dropdown>
+          </head-item>
+          <head-item>
+            <switch-lang></switch-lang>
+          </head-item>
+        </a-space>
       </a-layout-header>
     );
   },

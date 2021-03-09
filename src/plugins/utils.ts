@@ -5,9 +5,7 @@ type RouterType = 'push' | 'replace' | 'external';
 
 export const logout = () => {
   Cookies.remove(userToken);
-  setTimeout(() => {
-    window.location.reload();
-  }, 1500);
+  window.location.reload();
 };
 
 export default ({ router }: any, inject: any) => {

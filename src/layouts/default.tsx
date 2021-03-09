@@ -25,10 +25,9 @@ export default defineComponent({
             placement="left"
             closable={false}
             v-model={[visible.value, 'visible']}
-            v-slots={{
-              default: () => <app-asider collapsed={false}></app-asider>,
-            }}
-          ></a-drawer>
+          >
+            <layout-asider collapsed={false}></layout-asider>
+          </a-drawer>
         ) : (
           <a-layout-sider
             class="layout-asider"
@@ -38,12 +37,12 @@ export default defineComponent({
             trigger={null}
             collapsible
           >
-            <app-asider collapsed={collapsed.value}></app-asider>
+            <layout-asider collapsed={collapsed.value}></layout-asider>
           </a-layout-sider>
         )}
 
         <a-layout>
-          <app-header collapsed={collapsed.value} onToggle={toggle}></app-header>
+          <layout-header collapsed={collapsed.value} onToggle={toggle}></layout-header>
           <a-layout-content class="layout-content">
             <router-view></router-view>
           </a-layout-content>

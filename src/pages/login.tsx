@@ -64,7 +64,7 @@ export default defineComponent({
     return () => (
       <div class="auth-layouts">
         <div class="switch-lang">
-          <app-switch-lang></app-switch-lang>
+          <switch-lang></switch-lang>
         </div>
         <div class="page">
           <div class="logo" />

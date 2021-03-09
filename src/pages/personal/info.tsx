@@ -1,3 +1,9 @@
+{
+  /* <route>
+  meta:
+    head:
+</route> */
+}
 import { defineComponent } from 'vue';
 
 export default defineComponent({
