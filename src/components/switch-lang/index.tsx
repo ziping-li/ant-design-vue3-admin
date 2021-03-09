@@ -29,9 +29,9 @@ export default defineComponent({
           ),
         }}
       >
-        <head-item>
+        <div>
           <TranslationOutlined style={{ fontSize: '16px' }} />
-        </head-item>
+        </div>
       </a-dropdown>
     );
   },

@@ -1,3 +1,11 @@
+{
+  /* <route>
+  meta:
+    breadcrumb: t('Overview.Breadcrumb')
+    head:
+      title: t('Overview.Title')
+</route> */
+}
 import { defineComponent } from 'vue';
 
 export default defineComponent({

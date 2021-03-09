@@ -17,6 +17,10 @@ export default {
     Upcoming: '待办',
     ViewAll: '查看全部',
   },
+  Home: {
+    Title: '首页 - Ant Design Admin',
+    Breadcrumb: '首页',
+  },
   Login: {
     Title: '登录 - Ant Design Admin',
     Description: '欢迎来到 Ant Design Admin, 请登录',
@@ -35,5 +39,6 @@ export default {
   },
   Overview: {
     Title: '总览 - Ant Design Admin',
+    Breadcrumb: '总览',
   },
 };

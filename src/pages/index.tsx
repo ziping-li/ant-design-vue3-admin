@@ -1,3 +1,12 @@
+{
+  /* <route>
+  meta:
+    breadcrumb: t('Home.Breadcrumb')
+    head:
+      title: t('Home.Title')
+</route> */
+}
+
 import { defineComponent, onBeforeMount } from 'vue';
 import { useRouter } from 'vue-router';
 

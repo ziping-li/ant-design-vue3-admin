@@ -1,6 +1,7 @@
 {
   /* <route>
   meta:
+    breadcrumb: t('Overview.Breadcrumb')
     head:
       title: t('Overview.Title')
 </route> */

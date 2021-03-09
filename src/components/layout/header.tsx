@@ -22,16 +22,21 @@ export default defineComponent({
 
     return () => (
       <a-layout-header class="layout-header">
-        {props.collapsed ? (
-          <menu-unfold-outlined class="trigger" onClick={toggle} />
-        ) : (
-          <menu-fold-outlined class="trigger" onClick={toggle} />
-        )}
+        <a-space>
+          {props.collapsed ? (
+            <menu-unfold-outlined class="trigger" onClick={toggle} />
+          ) : (
+            <menu-fold-outlined class="trigger" onClick={toggle} />
+          )}
+          <breadcrumb></breadcrumb>
+        </a-space>
 
         <a-space>
           <notification></notification>
           <avatar-dropdown></avatar-dropdown>
-          <switch-lang></switch-lang>
+          <head-item>
+            <switch-lang></switch-lang>
+          </head-item>
         </a-space>
       </a-layout-header>
     );

@@ -17,6 +17,10 @@ export default {
     Upcoming: 'Upcoming',
     ViewAll: 'View All',
   },
+  Home: {
+    Title: 'Home - Ant Design Admin',
+    Breadcrumb: 'Home',
+  },
   Login: {
     Title: 'Login - Ant Design Admin',
     Description: 'Welcome to Ant Design Admin, Please login',
@@ -34,5 +38,6 @@ export default {
   },
   Overview: {
     Title: 'Overview - Ant Design Admin',
+    Breadcrumb: 'Overview',
   },
 };
