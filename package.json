@@ -1,7 +1,7 @@
 {
   "name": "ant-design-vue3-admin",
   "version": "1.0.0",
-  "description": "一个基于 Vue3 + Vite2 + Ant Design Vue + Tsx 极简的后台管理系统模板",
+  "description": "一个简单易配置的后台管理系统模板，基于 Vite2 + Vue3 + Typescript + Tsx，支持响应式布局，在 PC、平板和手机上均易使用",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
