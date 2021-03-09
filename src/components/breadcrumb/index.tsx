@@ -10,12 +10,12 @@ export default defineComponent({
     const matched = computed(() => {
       return [
         { path: '/', meta: { breadcrumb: 't("Home.Breadcrumb")' } },
-        ...toRaw(route.matched).slice(1),
+        ...toRaw(route.matched).slice(1).filter(n => n.meta.breadcrumb),
       ];
     });
 
     return () => (
-      <a-breadcrumb>
+      <a-breadcrumb class="d-none d-sm-inline-block">
         {matched.value.map((match) => (
           <a-breadcrumb-item>
             <router-link to={match.path}>{t(match.meta.breadcrumb.slice(3, -2))}</router-link>
