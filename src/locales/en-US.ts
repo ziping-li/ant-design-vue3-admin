@@ -12,6 +12,10 @@ export default {
     PersonalCenter: 'Personal Center',
     PersonalSetting: 'Personal Setting',
     Logout: 'Logout',
+    Notice: 'Notice',
+    Message: 'Message',
+    Upcoming: 'Upcoming',
+    ViewAll: 'View All',
   },
   Login: {
     Title: 'Login - Ant Design Admin',

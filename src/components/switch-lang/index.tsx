@@ -13,8 +13,8 @@ export default defineComponent({
     };
     return () => (
       <a-dropdown
-        trigger={['click']}
-        placement="bottomCenter"
+        trigger={['click', 'hover']}
+        placement="bottomRight"
         v-slots={{
           overlay: () => (
             <a-menu
@@ -29,9 +29,9 @@ export default defineComponent({
           ),
         }}
       >
-        <div class="section hover">
+        <head-item>
           <TranslationOutlined style={{ fontSize: '16px' }} />
-        </div>
+        </head-item>
       </a-dropdown>
     );
   },

@@ -23,7 +23,7 @@ export default defineComponent({
 
     return () => (
       <a-dropdown
-        trigger={['click']}
+        trigger={['hover', 'click']}
         placement="bottomCenter"
         v-slots={{
           overlay: () => (
@@ -43,10 +43,12 @@ export default defineComponent({
           ),
         }}
       >
-        <a-space>
-          <a-avatar src="/avatar.jpg" small></a-avatar>
-          <span>{userInfo.value.nickname}</span>
-        </a-space>
+        <head-item>
+          <a-space>
+            <a-avatar src="/avatar.jpg" size={22}></a-avatar>
+            <span>{userInfo.value.nickname}</span>
+          </a-space>
+        </head-item>
       </a-dropdown>
     );
   },

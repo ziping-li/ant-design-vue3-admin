@@ -29,12 +29,9 @@ export default defineComponent({
         )}
 
         <a-space>
-          <head-item>
-            <avatar-dropdown></avatar-dropdown>
-          </head-item>
-          <head-item>
-            <switch-lang></switch-lang>
-          </head-item>
+          <notification></notification>
+          <avatar-dropdown></avatar-dropdown>
+          <switch-lang></switch-lang>
         </a-space>
       </a-layout-header>
     );

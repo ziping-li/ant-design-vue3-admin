@@ -1,0 +1,43 @@
+.notification-wrapper {
+  width: 320px;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 20%);
+
+  .ant-tabs-nav-scroll {
+    text-align: center;
+  }
+
+  .ant-list-item {
+    padding: 8px 16px;
+    cursor: pointer;
+
+    .ant-list-item-meta, .ant-list-item-meta-content {
+      overflow: hidden;
+    }
+
+    .ant-list-item-meta-avatar {
+      padding-top: 5px;
+    }
+
+    .ant-list-item-meta-title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: rgba(0, 0, 0, .65);
+      transition: color cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
+    }
+
+    .ant-list-item-meta-description {
+      font-size: 12px;
+    }
+
+    &:hover .ant-list-item-meta-title {
+      color: @primary-color;
+    }
+  }
+
+  .check-all-button {
+    border: none;
+    border-top: 1px solid #f0f0f0 !important;
+  }
+}

@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="/logo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="/logo.png" />
     <title><!-- TITLE --></title>
     <!-- HEAD -->
   </head>
@@ -16,8 +16,9 @@
       import convue from 'convue-package';
       import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer';
       import userMock from './mock/user';
+      import notificationMock from './mock/notification';
 
-      createProdMockServer([...userMock]);
+      createProdMockServer([...userMock, ...notificationMock]);
 
       const app = createApp(App);
 

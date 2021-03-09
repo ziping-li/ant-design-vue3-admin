@@ -12,6 +12,10 @@ export default {
     PersonalCenter: '个人中心',
     PersonalSetting: '个人设置',
     Logout: '退出登录',
+    Notice: '通知',
+    Message: '消息',
+    Upcoming: '待办',
+    ViewAll: '查看全部',
   },
   Login: {
     Title: '登录 - Ant Design Admin',
