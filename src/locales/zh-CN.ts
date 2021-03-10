@@ -10,7 +10,7 @@ export default {
   },
   Components: {
     PersonalCenter: '个人中心',
-    PersonalSetting: '个人设置',
+    PersonalSetting: '账户设置',
     Logout: '退出登录',
     Notice: '通知',
     Message: '消息',
@@ -51,4 +51,10 @@ export default {
       Title: '总览 - Ant Design Admin',
     },
   },
+  Workplace: {
+    Title: '工作台',
+    Head: {
+      Title: '工作台 - Ant Design Admin',
+    },
+  }
 };

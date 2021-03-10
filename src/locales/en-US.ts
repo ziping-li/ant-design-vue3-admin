@@ -10,7 +10,7 @@ export default {
   },
   Components: {
     PersonalCenter: 'Personal Center',
-    PersonalSetting: 'Personal Setting',
+    PersonalSetting: 'Account Setting',
     Logout: 'Logout',
     Notice: 'Notice',
     Message: 'Message',
@@ -50,4 +50,10 @@ export default {
       Title: 'Overview - Ant Design Admin',
     },
   },
+  Workplace: {
+    Title: 'Workplace',
+    Head: {
+      Title: 'Workplace - Ant Design Admin',
+    },
+  }
 };
