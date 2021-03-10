@@ -2,6 +2,7 @@
   /* <route>
   meta:
     title: t('PersonalCenter.Title')
+    permissionCode: view:personal_info
     head:
       title: t('PersonalCenter.Head.Title')
 </route> */

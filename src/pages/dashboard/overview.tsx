@@ -2,6 +2,7 @@
   /* <route>
   meta:
     title: t('Overview.Title')
+    permissionCode: view:dashboard_overview
     head:
       title: t('Overview.Head.Title')
 </route> */

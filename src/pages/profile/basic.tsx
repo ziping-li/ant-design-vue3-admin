@@ -2,6 +2,7 @@
   /* <route>
   meta:
     title: t('BasicProfile.Title')
+    permissionCode: view:profile_basic
     head:
       title: t('BasicProfile.Head.Title')
 </route> */

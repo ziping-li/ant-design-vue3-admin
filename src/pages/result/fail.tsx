@@ -2,6 +2,7 @@
   /* <route>
   meta:
     title: t('FailResult.Title')
+    permissionCode: view:result_fail
     head:
       title: t('FailResult.Head.Title')
 </route> */

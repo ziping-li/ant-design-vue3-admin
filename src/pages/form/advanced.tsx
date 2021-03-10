@@ -2,6 +2,7 @@
   /* <route>
   meta:
     title: t('AdvancedForm.Title')
+    permissionCode: view:form_advanced
     head:
       title: t('AdvancedForm.Head.Title')
 </route> */

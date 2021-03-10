@@ -2,6 +2,7 @@
   /* <route>
   meta:
     title: t('StepForm.Title')
+    permissionCode: view:form_step
     head:
       title: t('StepForm.Head.Title')
 </route> */

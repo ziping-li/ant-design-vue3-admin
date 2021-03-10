@@ -2,6 +2,7 @@
   /* <route>
   meta:
     title: t('Message.Title')
+    permissionCode: view:message
     head:
       title: t('Message.Head.Title')
 </route> */

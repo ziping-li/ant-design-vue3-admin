@@ -2,6 +2,7 @@
   /* <route>
   meta:
     title: t('BasicForm.Title')
+    permissionCode: view:form_basic
     head:
       title: t('BasicForm.Head.Title')
 </route> */

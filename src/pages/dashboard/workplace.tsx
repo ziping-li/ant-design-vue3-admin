@@ -2,6 +2,7 @@
   /* <route>
   meta:
     title: t('Workplace.Title')
+    permissionCode: view:dashboard_workplace
     head:
       title: t('Workplace.Head.Title')
 </route> */

@@ -2,6 +2,7 @@
   /* <route>
   meta:
     title: t('SearchList.Title')
+    permissionCode: view:list_search
     head:
       title: t('SearchList.Head.Title')
 </route> */

@@ -2,6 +2,7 @@
   /* <route>
   meta:
     title: t('CardList.Title')
+    permissionCode: view:list_card
     head:
       title: t('CardList.Head.Title')
 </route> */
