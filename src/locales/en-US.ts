@@ -55,5 +55,71 @@ export default {
     Head: {
       Title: 'Workplace - Ant Design Admin',
     },
+  },
+  BasicForm: {
+    Title: 'Basic Form',
+    Head: {
+      Title: 'Basic Form - Ant Design Admin',
+    },
+  },
+  StepForm: {
+    Title: 'Step Form',
+    Head: {
+      Title: 'Step Form - Ant Design Admin',
+    },
+  },
+  AdvancedForm: {
+    Title: 'Advanced Form',
+    Head: {
+      Title: 'Advanced Form - Ant Design Admin',
+    }
+  },
+  SearchList: {
+    Title: 'Search List',
+    Head: {
+      Title: 'Search List - Ant Design Admin',
+    },
+  },
+  CardList: {
+    Title: 'Card List',
+    Head: {
+      Title: 'Card List - Ant Design Admin',
+    },
+  },
+  BasicProfile: {
+    Title: 'Basic Profile',
+    Head: {
+      Title: 'Basic Profile - Ant Design Admin',
+    },
+  },
+  SuccessResult: {
+    Title: 'Success',
+    Head: {
+      Title: 'Success - Ant Design Admin',
+    },
+  },
+  FailResult: {
+    Title: 'Fail',
+    Head: {
+      Title: 'Fail - Ant Design Admin',
+    },
+  },
+  Message: {
+    Title: 'Message',
+    Head: {
+      Title: 'Message - Ant Design Admin',
+    },
+  },
+  PersonalCenter: {
+    Title: 'Personal Center',
+    Head: {
+      Title: 'Personal Center - Ant Design Admin',
+    },
+  },
+  AccountSetting: {
+    Title: 'Account Setting',
+    Head: {
+      Title: 'Account Setting - Ant Design Admin',
+    },
   }
 };

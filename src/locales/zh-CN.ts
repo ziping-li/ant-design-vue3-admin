@@ -56,5 +56,71 @@ export default {
     Head: {
       Title: '工作台 - Ant Design Admin',
     },
+  },
+  BasicForm: {
+    Title: '基础表单',
+    Head: {
+      Title: '基础表单 - Ant Design Admin',
+    },
+  },
+  StepForm: {
+    Title: '分布表单',
+    Head: {
+      Title: '分布表单 - Ant Design Admin',
+    },
+  },
+  AdvancedForm: {
+    Title: '复杂表单',
+    Head: {
+      Title: '复杂表单 - Ant Design Admin',
+    }
+  },
+  SearchList: {
+    Title: '查询表格',
+    Head: {
+      Title: '查询表格 - Ant Design Admin',
+    },
+  },
+  CardList: {
+    Title: '卡片列表',
+    Head: {
+      Title: '卡片列表 - Ant Design Admin',
+    },
+  },
+  BasicProfile: {
+    Title: '基础详情页',
+    Head: {
+      Title: '基础详情页 - Ant Design Admin',
+    },
+  },
+  SuccessResult: {
+    Title: '成功页',
+    Head: {
+      Title: '成功页 - Ant Design Admin',
+    },
+  },
+  FailResult: {
+    Title: '失败页',
+    Head: {
+      Title: '失败页 - Ant Design Admin',
+    },
+  },
+  Message: {
+    Title: '消息中心',
+    Head: {
+      Title: '消息中心 - Ant Design Admin',
+    },
+  },
+  PersonalCenter: {
+    Title: '个人中心',
+    Head: {
+      Title: '个人中心 - Ant Design Admin',
+    },
+  },
+  AccountSetting: {
+    Title: '账户设置',
+    Head: {
+      Title: '账户设置 - Ant Design Admin',
+    },
   }
 };
