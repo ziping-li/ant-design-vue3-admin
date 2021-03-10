@@ -8,7 +8,7 @@ export const logout = () => {
   window.location.reload();
 };
 
-export default ({ router }: any, inject: any) => {
+export default ({ router, t }: any, inject: any) => {
   inject('navigateTo', (url: string | undefined, target: RouterType = 'push') => {
     if (!url) {
       router.back();
@@ -19,5 +19,9 @@ export default ({ router }: any, inject: any) => {
         router[target](url);
       }
     }
+  });
+
+  inject('getLocaleText', (text: string) => {
+    return /^t\(.+\)$/.test(text) ? t(text.slice(3, -2)) : text;
   });
 };

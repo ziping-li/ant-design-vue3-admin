@@ -1,9 +1,9 @@
 {
   /* <route>
   meta:
-    breadcrumb: t('Overview.Breadcrumb')
+    title: t('Overview.Title')
     head:
-      title: t('Overview.Title')
+      title: t('Overview.Head.Title')
 </route> */
 }
 import { defineComponent } from 'vue';

@@ -43,6 +43,7 @@ export default defineComponent({
 
         <a-layout>
           <layout-header collapsed={collapsed.value} onToggle={toggle}></layout-header>
+          <visited-tags></visited-tags>
           <a-layout-content class="layout-content">
             <router-view></router-view>
           </a-layout-content>

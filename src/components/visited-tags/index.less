@@ -1,0 +1,41 @@
+.visited-tags {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  margin: 0 12px;
+
+  .ant-tabs-bar {
+    margin-bottom: 0;
+  }
+
+  .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-nav-container {
+    height: 32px;
+  }
+
+  .ant-tabs-tab-prev.ant-tabs-tab-arrow-show, .ant-tabs-tab-next.ant-tabs-tab-arrow-show {
+    color: rgba(0, 0, 0, .65);
+  }
+
+  .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
+    height: 32px;
+    line-height: 30px;
+    color: rgba(0, 0, 0, .65);
+
+    &:hover {
+      color:rgba(0, 0, 0, .75);
+    }
+  }
+
+  .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
+    color: @primary-color !important;
+  }
+
+  .ant-btn {
+    flex-shrink: 0;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    margin-left: 10px;
+    color: rgba(0, 0, 0, .65);
+  }
+}

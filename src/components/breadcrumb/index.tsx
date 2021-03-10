@@ -8,17 +8,26 @@ export default defineComponent({
     const { t } = useI18n();
 
     const matched = computed(() => {
-      return [
-        { path: '/', meta: { breadcrumb: 't("Home.Breadcrumb")' } },
-        ...toRaw(route.matched).slice(1).filter(n => n.meta.breadcrumb),
-      ];
+      const currentMatched = toRaw(route.matched)
+        .slice(1)
+        .filter((n) => n.meta.title);
+
+      if (currentMatched.find((item) => item.path === '/')) {
+        return currentMatched;
+      } else {
+        return [{ path: '/', meta: { title: 't("Home.Title")' } }, ...currentMatched];
+      }
     });
 
     return () => (
       <a-breadcrumb class="d-none d-sm-inline-block">
         {matched.value.map((match) => (
           <a-breadcrumb-item>
-            <router-link to={match.path}>{t(match.meta.breadcrumb.slice(3, -2))}</router-link>
+            <router-link to={match.path}>
+              {/^t\(.+\)$/.test(match.meta.title)
+                ? t(match.meta.title.slice(3, -2))
+                : match.meta.title}
+            </router-link>
           </a-breadcrumb-item>
         ))}
       </a-breadcrumb>

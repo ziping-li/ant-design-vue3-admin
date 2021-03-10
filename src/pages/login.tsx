@@ -3,7 +3,7 @@
   meta:
     layout: empty
     head:
-      title: t('Login.Title')
+      title: t('Login.Head.Title')
 </route> */
 }
 import { defineComponent, computed, ref, reactive } from 'vue';

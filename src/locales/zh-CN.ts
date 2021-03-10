@@ -16,13 +16,21 @@ export default {
     Message: '消息',
     Upcoming: '待办',
     ViewAll: '查看全部',
+    Close: '关闭',
+    CloseLeft: '关闭左侧',
+    CloseRight: '关闭右侧',
+    CloseOther: '关闭其他',
   },
   Home: {
-    Title: '首页 - Ant Design Admin',
-    Breadcrumb: '首页',
+    Title: '首页',
+    Head: {
+      Title: '首页 - Ant Design Admin',
+    },
   },
   Login: {
-    Title: '登录 - Ant Design Admin',
+    Head: {
+      Title: '登录 - Ant Design Admin',
+    },
     Description: '欢迎来到 Ant Design Admin, 请登录',
     Username: '用户名',
     Password: '密码',
@@ -38,7 +46,9 @@ export default {
     ReturnPrevious: '返回上一页',
   },
   Overview: {
-    Title: '总览 - Ant Design Admin',
-    Breadcrumb: '总览',
+    Title: '总览',
+    Head: {
+      Title: '总览 - Ant Design Admin',
+    },
   },
 };

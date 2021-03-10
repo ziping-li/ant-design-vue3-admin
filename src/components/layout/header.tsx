@@ -33,10 +33,10 @@ export default defineComponent({
 
         <a-space>
           <notification></notification>
-          <avatar-dropdown></avatar-dropdown>
           <head-item>
             <switch-lang></switch-lang>
           </head-item>
+          <avatar-dropdown></avatar-dropdown>
         </a-space>
       </a-layout-header>
     );

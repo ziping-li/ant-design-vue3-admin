@@ -13,7 +13,7 @@ export default defineComponent({
     };
     return () => (
       <a-dropdown
-        trigger={['click', 'hover']}
+        trigger={['hover']}
         placement="bottomRight"
         v-slots={{
           overlay: () => (

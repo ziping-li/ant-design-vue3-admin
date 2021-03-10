@@ -1,9 +1,9 @@
 {
   /* <route>
   meta:
-    breadcrumb: t('Home.Breadcrumb')
+    title: t('Home.Title')
     head:
-      title: t('Home.Title')
+      title: t('Home.Head.Title')
 </route> */
 }
 

@@ -16,13 +16,21 @@ export default {
     Message: 'Message',
     Upcoming: 'Upcoming',
     ViewAll: 'View All',
+    Close: 'Close',
+    CloseLeft: 'Close Left',
+    CloseRight: 'Close Right',
+    CloseOther: 'Close Other',
   },
   Home: {
-    Title: 'Home - Ant Design Admin',
-    Breadcrumb: 'Home',
+    Title: 'Home',
+    Head: {
+      Title: 'Home - Ant Design Admin',
+    },
   },
   Login: {
-    Title: 'Login - Ant Design Admin',
+    Head: {
+      Title: 'Login - Ant Design Admin',
+    },
     Description: 'Welcome to Ant Design Admin, Please login',
     Username: 'Username',
     Password: 'Password',
@@ -37,7 +45,9 @@ export default {
     ReturnPrevious: 'Go Back',
   },
   Overview: {
-    Title: 'Overview - Ant Design Admin',
-    Breadcrumb: 'Overview',
+    Title: 'Overview',
+    Head: {
+      Title: 'Overview - Ant Design Admin',
+    },
   },
 };
