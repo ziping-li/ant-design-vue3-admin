@@ -1,11 +1,16 @@
-import { defineComponent, ref } from 'vue';
-import { UserOutlined, PieChartOutlined } from '@ant-design/icons-vue';
+import { computed, defineComponent, ref, watch, watchEffect } from 'vue';
+import { useStore } from 'vuex';
+import { useRouter, useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
+import * as antIcons from '@ant-design/icons-vue';
 import Scroll from '@convue-lib/scroll';
+import { Menu, ActionTypes } from '../../store/index';
+
+const Icons: any = antIcons;
 
 export default defineComponent({
   components: {
-    UserOutlined,
-    PieChartOutlined,
+    ...Icons,
   },
   props: {
     collapsed: {
@@ -14,8 +19,38 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const openKeys = ref<string[]>([]);
-    const selectedKeys = ref<string[]>(['1']);
+    const { dispatch, state } = useStore();
+    const router = useRouter();
+    const route = useRoute();
+    const { locale } = useI18n();
+    const menu = computed(() => state.userMenu);
+
+    const defaultOpenKeys = () =>
+      menu.value
+        .filter((item: Menu) => item.children.find((child: Menu) => child.path === route.path))
+        .map((n: Menu) => n.id);
+
+    const openKeys = ref<number[]>(defaultOpenKeys());
+    const selectedKeys = ref<string[]>([route.path]);
+
+    const onMenuItemClick = ({ key }: any) => {
+      router.push(key);
+    };
+
+    const onOpenChange = (keys: number[]) => {
+      if (keys.length === 2) {
+        openKeys.value = [keys[keys.length - 1]];
+      }
+    };
+
+    watchEffect(() => {
+      selectedKeys.value = [route.path];
+      openKeys.value = defaultOpenKeys();
+    });
+
+    watch(locale, (val) => {
+      dispatch(ActionTypes.MENU, val);
+    });
 
     return () => (
       <>
@@ -34,28 +69,31 @@ export default defineComponent({
               [selectedKeys.value, 'selectedKeys'],
               [openKeys.value, 'openKeys'],
             ]}
+            onClick={onMenuItemClick}
+            onOpenChange={onOpenChange}
           >
-            <a-sub-menu
-              key="sub1"
-              v-slots={{
-                title: () => (
-                  <span>
-                    <UserOutlined />
-                    <span>subnav 1</span>
-                  </span>
-                ),
-              }}
-            >
-              <a-menu-item key="1">option1</a-menu-item>
-              <a-menu-item key="2">option2</a-menu-item>
-              <a-menu-item key="3">option3</a-menu-item>
-              <a-menu-item key="4">option4</a-menu-item>
-            </a-sub-menu>
-
-            <a-menu-item key="5">
-              <PieChartOutlined />
-              <span>option5</span>
-            </a-menu-item>
+            {menu.value.map((item: Menu) => {
+              return (
+                <a-sub-menu
+                  key={item.id}
+                  v-slots={{
+                    title: () => {
+                      const IconComponent = Icons[item.icon];
+                      return (
+                        <span>
+                          <IconComponent></IconComponent>
+                          <span>{item.name}</span>
+                        </span>
+                      );
+                    },
+                  }}
+                >
+                  {item.children.map((child: Menu) => {
+                    return <a-menu-item key={child.path}>{child.name}</a-menu-item>;
+                  })}
+                </a-sub-menu>
+              );
+            })}
           </a-menu>
         </Scroll>
       </>

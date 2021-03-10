@@ -1,6 +1,7 @@
 import { defineComponent, getCurrentInstance, ref, watchEffect } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
+import { whiteList } from '../../config/constants';
 import {
   DownOutlined,
   CloseOutlined,
@@ -32,7 +33,10 @@ export default defineComponent({
     const getLocaleText = getCurrentInstance()?.appContext.config.globalProperties.$getLocaleText;
 
     const hasRoute = () => {
-      return visitedRoutes.value.find((item) => item.path === route.path);
+      return (
+        visitedRoutes.value.find((item) => item.path === route.path) ||
+        whiteList.includes(route.path)
+      );
     };
 
     watchEffect(() => {

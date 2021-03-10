@@ -17,8 +17,9 @@
       import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer';
       import userMock from './mock/user';
       import notificationMock from './mock/notification';
+      import menuMock from './mock/menu';
 
-      createProdMockServer([...userMock, ...notificationMock]);
+      createProdMockServer([...userMock, ...notificationMock, ...menuMock]);
 
       const app = createApp(App);
 

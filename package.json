@@ -34,7 +34,7 @@
     "@vuedx/typescript-plugin-vue": "^0.6.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "convue": "1.2.2",
+    "convue": "1.2.4",
     "css-loader": "^4.2.1",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
