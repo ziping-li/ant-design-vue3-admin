@@ -55,7 +55,9 @@ export default {
     Week: 'WoW Change',
     Day: 'DoD Change',
     Visits: 'Visits',
-    DayVisits: 'Daily Visits'
+    DayVisits: 'Daily Visits',
+    Payments: 'Payments',
+    ConversionRate: 'Conversion Rate',
   },
   Workplace: {
     Title: 'Workplace',
@@ -79,7 +81,7 @@ export default {
     Title: 'Advanced Form',
     Head: {
       Title: 'Advanced Form - Ant Design Admin',
-    }
+    },
   },
   SearchList: {
     Title: 'Search List',
@@ -128,5 +130,5 @@ export default {
     Head: {
       Title: 'Account Setting - Ant Design Admin',
     },
-  }
+  },
 };

@@ -1,5 +1,5 @@
 import { defineComponent, onMounted, PropType } from 'vue';
-import { Area } from '@antv/g2plot';
+import { Column } from '@antv/g2plot';
 import * as uuid from 'uuid';
 import './index.less';
 
@@ -42,7 +42,7 @@ export default defineComponent({
           formatter: props.formatter,
         };
       }
-      const area = new Area(produceId, options);
+      const area = new Column(produceId, options);
       area.render();
     });
 

@@ -12,6 +12,8 @@ import { useToggle } from '@ant-design-vue/use';
 import { useI18n } from 'vue-i18n';
 import { InfoCircleOutlined } from '@ant-design/icons-vue';
 import { numeral } from '@convue-lib/utils';
+import { Datum } from '@antv/g2plot';
+import { miniArea, miniBar } from '../../../schemes/charts';
 
 export default defineComponent({
   setup() {
@@ -85,7 +87,37 @@ export default defineComponent({
               }}
             >
               <div style="transform: translateY(10px);">
-                <mini-area />
+                <mini-area
+                  data={miniArea}
+                  formatter={(datum: Datum) => ({ name: t('Overview.Visits'), value: datum.y })}
+                />
+              </div>
+            </chart-card>
+          </a-col>
+          <a-col span={24} sm={24} md={12} xl={6}>
+            <chart-card
+              loading={loading.value}
+              title={t('Overview.Payments')}
+              total={numeral(6560).format('0,0')}
+              v-slots={{
+                action: () => (
+                  <a-tooltip title={t('Overview.Introduce')}>
+                    <InfoCircleOutlined />
+                  </a-tooltip>
+                ),
+                footer: () => (
+                  <>
+                    {t('Overview.ConversionRate')}
+                    <span>60%</span>
+                  </>
+                ),
+              }}
+            >
+              <div style="transform: translateY(10px);">
+                <mini-bar
+                  data={miniBar}
+                  formatter={(datum: Datum) => ({ name: t('Overview.Payments'), value: datum.y })}
+                />
               </div>
             </chart-card>
           </a-col>

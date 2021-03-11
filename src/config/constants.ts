@@ -1,4 +1,4 @@
-export const primaryColor = '#1890ff';
+export const primaryColor = '#247FEA';
 
 export const textColor = 'rgba(0, 0, 0, .65)';
 

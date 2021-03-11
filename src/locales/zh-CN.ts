@@ -57,6 +57,8 @@ export default {
     Day: '日同比',
     Visits: '访问量',
     DayVisits: '日访问量',
+    Payments: '支付笔数',
+    ConversionRate: '转化率',
   },
   Workplace: {
     Title: '工作台',
