@@ -9,17 +9,18 @@
   }
 
   .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-nav-container {
-    height: 32px;
+    height: 34px;
   }
 
   .ant-tabs-tab-prev.ant-tabs-tab-arrow-show, .ant-tabs-tab-next.ant-tabs-tab-arrow-show {
-    color: rgba(0, 0, 0, .65);
+    color: @text-color;
   }
 
   .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
-    height: 32px;
-    line-height: 30px;
-    color: rgba(0, 0, 0, .65);
+    height: 34px;
+    line-height: 32px;
+    color: @text-color;
+    margin-right: 5px;
 
     &:hover {
       color:rgba(0, 0, 0, .75);
@@ -36,6 +37,6 @@
     box-shadow: none;
     outline: none;
     margin-left: 10px;
-    color: rgba(0, 0, 0, .65);
+    color: @text-color;
   }
 }

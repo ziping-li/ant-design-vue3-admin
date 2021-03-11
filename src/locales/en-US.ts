@@ -49,6 +49,11 @@ export default {
     Head: {
       Title: 'Overview - Ant Design Admin',
     },
+    TotalSales: 'Total Sales',
+    Introduce: 'Introduce',
+    DaySales: 'Daily Sales',
+    Week: 'WoW Change',
+    Day: 'DoD Change',
   },
   Workplace: {
     Title: 'Workplace',

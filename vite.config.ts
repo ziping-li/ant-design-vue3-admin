@@ -2,7 +2,12 @@ import { UserConfigExport, ConfigEnv } from 'vite';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { viteMockServe } from 'vite-plugin-mock';
 import convue from 'convue';
-import { i18nUseCookie, primaryColor, mockServerProdEnable } from './src/config/constants';
+import {
+  primaryColor,
+  textColor,
+  i18nUseCookie,
+  mockServerProdEnable,
+} from './src/config/constants';
 
 export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
@@ -12,6 +17,9 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
           javascriptEnabled: true,
           modifyVars: {
             'primary-color': primaryColor,
+            'heading-color': textColor,
+            'text-color': textColor,
+            'card-head-color': textColor,
           },
         },
       },

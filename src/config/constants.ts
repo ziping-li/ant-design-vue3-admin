@@ -1,4 +1,6 @@
-export const primaryColor = '#4aa271';
+export const primaryColor = '#1890ff';
+
+export const textColor = 'rgba(0, 0, 0, .65)';
 
 export const i18nUseCookie = {
   cookieKey: 'ant_design_vue3_admin_i18n',

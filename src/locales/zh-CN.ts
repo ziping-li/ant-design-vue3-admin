@@ -50,6 +50,11 @@ export default {
     Head: {
       Title: '总览 - Ant Design Admin',
     },
+    TotalSales: '总销售额',
+    Introduce: '指标说明',
+    DaySales: '日均销售额',
+    Week: '周同比',
+    Day: '日同比',
   },
   Workplace: {
     Title: '工作台',

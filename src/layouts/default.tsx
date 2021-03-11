@@ -33,7 +33,7 @@ export default defineComponent({
             class="layout-asider"
             v-model={[collapsed.value, 'collapsed']}
             breakpoint="md"
-            width={250}
+            width={256}
             trigger={null}
             collapsible
           >
