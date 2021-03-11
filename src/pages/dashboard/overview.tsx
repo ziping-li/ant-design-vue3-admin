@@ -28,7 +28,7 @@ export default defineComponent({
 
     return () => (
       <>
-        <a-row class="px-3" gutter={[24, 24]}>
+        <a-row class="px-3" gutter={[20, 20]}>
           <a-col span={24} sm={24} md={12} xl={6}>
             <chart-card
               loading={loading.value}
@@ -119,6 +119,43 @@ export default defineComponent({
                   formatter={(datum: Datum) => ({ name: t('Overview.Payments'), value: datum.y })}
                 />
               </div>
+            </chart-card>
+          </a-col>
+          <a-col span={24} sm={24} md={12} xl={6}>
+            <chart-card
+              loading={loading.value}
+              title={t('Overview.OperationalEffect')}
+              total="78%"
+              v-slots={{
+                action: () => (
+                  <a-tooltip title={t('Overview.Introduce')}>
+                    <InfoCircleOutlined />
+                  </a-tooltip>
+                ),
+                footer: () => (
+                  <>
+                    <trend
+                      flag="down"
+                      class="mr-4"
+                      v-slots={{
+                        term: () => <span>{t('Overview.Week')}</span>,
+                      }}
+                    >
+                      12%
+                    </trend>
+                    <trend
+                      flag="up"
+                      v-slots={{
+                        term: () => <span>{t('Overview.Day')}</span>,
+                      }}
+                    >
+                      80%
+                    </trend>
+                  </>
+                ),
+              }}
+            >
+              <mini-progress color="rgb(19, 194, 194)" target={80} percentage={78} height="8px" />
             </chart-card>
           </a-col>
         </a-row>

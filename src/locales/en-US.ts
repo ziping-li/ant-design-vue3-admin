@@ -58,6 +58,7 @@ export default {
     DayVisits: 'Daily Visits',
     Payments: 'Payments',
     ConversionRate: 'Conversion Rate',
+    OperationalEffect: 'Operational Effect',
   },
   Workplace: {
     Title: 'Workplace',

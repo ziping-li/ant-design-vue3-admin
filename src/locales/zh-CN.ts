@@ -59,6 +59,7 @@ export default {
     DayVisits: '日访问量',
     Payments: '支付笔数',
     ConversionRate: '转化率',
+    OperationalEffect: '运营活动效果',
   },
   Workplace: {
     Title: '工作台',
