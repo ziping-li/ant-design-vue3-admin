@@ -55,6 +55,8 @@ export default {
     DaySales: '日均销售额',
     Week: '周同比',
     Day: '日同比',
+    Visits: '访问量',
+    DayVisits: '日访问量',
   },
   Workplace: {
     Title: '工作台',
@@ -78,7 +80,7 @@ export default {
     Title: '复杂表单',
     Head: {
       Title: '复杂表单 - Ant Design Admin',
-    }
+    },
   },
   SearchList: {
     Title: '查询表格',
@@ -127,5 +129,5 @@ export default {
     Head: {
       Title: '账户设置 - Ant Design Admin',
     },
-  }
+  },
 };

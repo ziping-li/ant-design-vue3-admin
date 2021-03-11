@@ -11,6 +11,7 @@ import { defineComponent, onMounted } from 'vue';
 import { useToggle } from '@ant-design-vue/use';
 import { useI18n } from 'vue-i18n';
 import { InfoCircleOutlined } from '@ant-design/icons-vue';
+import { numeral } from '@convue-lib/utils';
 
 export default defineComponent({
   setup() {
@@ -25,8 +26,8 @@ export default defineComponent({
 
     return () => (
       <>
-        <a-row class="mb-6 px-3">
-          <a-col sm={24} md={12} xl={6}>
+        <a-row class="px-3" gutter={[24, 24]}>
+          <a-col span={24} sm={24} md={12} xl={6}>
             <chart-card
               loading={loading.value}
               title={t('Overview.TotalSales')}
@@ -64,7 +65,29 @@ export default defineComponent({
               </trend>
             </chart-card>
           </a-col>
-          <a-col sm={24} md={12} xl={6}>
+          <a-col span={24} sm={24} md={12} xl={6}>
+            <chart-card
+              loading={loading.value}
+              title={t('Overview.Visits')}
+              total={numeral(8846).format('0,0')}
+              v-slots={{
+                action: () => (
+                  <a-tooltip title={t('Overview.Introduce')}>
+                    <InfoCircleOutlined />
+                  </a-tooltip>
+                ),
+                footer: () => (
+                  <>
+                    {t('Overview.DayVisits')}
+                    <span> {numeral(1234).format('0,0')}</span>
+                  </>
+                ),
+              }}
+            >
+              <div style="transform: translateY(10px);">
+                <mini-area />
+              </div>
+            </chart-card>
           </a-col>
         </a-row>
       </>

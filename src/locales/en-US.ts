@@ -54,6 +54,8 @@ export default {
     DaySales: 'Daily Sales',
     Week: 'WoW Change',
     Day: 'DoD Change',
+    Visits: 'Visits',
+    DayVisits: 'Daily Visits'
   },
   Workplace: {
     Title: 'Workplace',
