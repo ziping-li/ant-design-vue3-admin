@@ -7,18 +7,21 @@
       title: t('Overview.Head.Title')
 </route> */
 }
-import { defineComponent, onMounted } from 'vue';
+import { computed, defineComponent, onMounted } from 'vue';
 import { useToggle } from '@ant-design-vue/use';
 import { useI18n } from 'vue-i18n';
 import { InfoCircleOutlined } from '@ant-design/icons-vue';
 import { numeral } from '@convue-lib/utils';
 import { Datum } from '@antv/g2plot';
-import { miniArea, miniBar } from '../../../schemes/charts';
+import { Lang } from '../../config/types';
+import { miniArea, miniBar, barData, barData2, rankList } from '../../../schemes/charts';
 
 export default defineComponent({
   setup() {
     const [loading, { toggle }] = useToggle(true);
-    const { t } = useI18n();
+    const { t, locale } = useI18n();
+    const lang = locale.value;
+    const rankLocaleList = computed(() => rankList[lang as Lang]);
 
     onMounted(() => {
       setTimeout(() => {
@@ -27,8 +30,8 @@ export default defineComponent({
     });
 
     return () => (
-      <>
-        <a-row class="px-3" gutter={[20, 20]}>
+      <div class="px-3">
+        <a-row gutter={[20, 20]}>
           <a-col span={24} sm={24} md={12} xl={6}>
             <chart-card
               loading={loading.value}
@@ -87,10 +90,10 @@ export default defineComponent({
               }}
             >
               <div style="transform: translateY(10px);">
-                <mini-area
+                <chart-mini-area
                   data={miniArea}
                   formatter={(datum: Datum) => ({ name: t('Overview.Visits'), value: datum.y })}
-                />
+                ></chart-mini-area>
               </div>
             </chart-card>
           </a-col>
@@ -114,10 +117,10 @@ export default defineComponent({
               }}
             >
               <div style="transform: translateY(10px);">
-                <mini-bar
+                <chart-mini-bar
                   data={miniBar}
                   formatter={(datum: Datum) => ({ name: t('Overview.Payments'), value: datum.y })}
-                />
+                ></chart-mini-bar>
               </div>
             </chart-card>
           </a-col>
@@ -155,11 +158,107 @@ export default defineComponent({
                 ),
               }}
             >
-              <mini-progress color="rgb(19, 194, 194)" target={80} percentage={78} height="8px" />
+              <chart-mini-progress
+                color="rgb(19, 194, 194)"
+                target={80}
+                percentage={78}
+                height="8px"
+              ></chart-mini-progress>
             </chart-card>
           </a-col>
         </a-row>
-      </>
+
+        <a-card
+          class="mt-5"
+          loading={loading.value}
+          bordered={false}
+          body-style={{ padding: '0', overflow: 'hidden' }}
+        >
+          <div class="salesCard">
+            <a-tabs
+              default-active-key="1"
+              size="large"
+              tab-bar-style={{ marginBottom: '24px', paddingLeft: '16px' }}
+              v-slots={{
+                tabBarExtraContent: () => (
+                  <div class="d-none d-lg-block pr-4">
+                    <a-radio-group class="mr-3" default-value="1" button-style="outline">
+                      <a-radio-button value="1">{t('Overview.AllDay')}</a-radio-button>
+                      <a-radio-button value="2">{t('Overview.AllWeek')}</a-radio-button>
+                      <a-radio-button value="3">{t('Overview.AllMonth')}</a-radio-button>
+                      <a-radio-button value="4">{t('Overview.AllYear')}</a-radio-button>
+                    </a-radio-group>
+                    <a-range-picker style={{ width: '256px' }} />
+                  </div>
+                ),
+              }}
+            >
+              <a-tab-pane loading={loading.value} tab={t('Overview.Sales')} key="1">
+                <div class="d-block d-lg-none pl-4 pb-2">
+                  <a-radio-group class="mb-3 mr-3" default-value="1" button-style="outline">
+                    <a-radio-button value="1">{t('Overview.AllDay')}</a-radio-button>
+                    <a-radio-button value="2">{t('Overview.AllWeek')}</a-radio-button>
+                    <a-radio-button value="3">{t('Overview.AllMonth')}</a-radio-button>
+                    <a-radio-button value="4">{t('Overview.AllYear')}</a-radio-button>
+                  </a-radio-group>
+                  <a-range-picker style={{ width: '256px' }} />
+                </div>
+                <a-row>
+                  <a-col xl={16} lg={12} md={12} sm={24} xs={24}>
+                    <div class="p-8 pr-md-0 pt-md-0">
+                      <chart-bar
+                        data={barData}
+                        title={t('Overview.SalesTrend')}
+                        tooltipFormatter={(datum: Datum) => ({
+                          name: t('Overview.Sales'),
+                          value: datum.y,
+                        })}
+                      ></chart-bar>
+                    </div>
+                  </a-col>
+                  <a-col xl={8} lg={12} md={12} sm={24} xs={24}>
+                    <rank-list
+                      title={t('Overview.SalesRanking')}
+                      list={rankLocaleList.value}
+                    ></rank-list>
+                  </a-col>
+                </a-row>
+              </a-tab-pane>
+              <a-tab-pane tab={t('Overview.Visits')} key="2">
+                <div class="d-block d-lg-none pl-4 pb-2">
+                  <a-radio-group class="mb-3 mr-3" default-value="1" button-style="outline">
+                    <a-radio-button value="1">{t('Overview.AllDay')}</a-radio-button>
+                    <a-radio-button value="2">{t('Overview.AllWeek')}</a-radio-button>
+                    <a-radio-button value="3">{t('Overview.AllMonth')}</a-radio-button>
+                    <a-radio-button value="4">{t('Overview.AllYear')}</a-radio-button>
+                  </a-radio-group>
+                  <a-range-picker style={{ width: '256px' }} />
+                </div>
+                <a-row>
+                  <a-col xl={16} lg={12} md={12} sm={24} xs={24}>
+                    <div class="p-8 pr-md-0 pt-md-0">
+                      <chart-bar
+                        data={barData2}
+                        title={t('Overview.VisitsTrend')}
+                        tooltipFormatter={(datum: Datum) => ({
+                          name: t('Overview.Sales'),
+                          value: datum.y,
+                        })}
+                      ></chart-bar>
+                    </div>
+                  </a-col>
+                  <a-col xl={8} lg={12} md={12} sm={24} xs={24}>
+                    <rank-list
+                      title={t('Overview.VisitsRanking')}
+                      list={rankLocaleList.value}
+                    ></rank-list>
+                  </a-col>
+                </a-row>
+              </a-tab-pane>
+            </a-tabs>
+          </div>
+        </a-card>
+      </div>
     );
   },
 });

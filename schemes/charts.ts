@@ -345,7 +345,6 @@ export const miniArea = [
   },
 ];
 
-
 export const miniBar = [
   {
     x: '2016-01',
@@ -404,3 +403,168 @@ export const miniBar = [
     y: 207,
   },
 ];
+
+export const barData = [
+  {
+    x: '1月',
+    y: 527,
+  },
+  {
+    x: '2月',
+    y: 267,
+  },
+  {
+    x: '3月',
+    y: 233,
+  },
+  {
+    x: '4月',
+    y: 411,
+  },
+  {
+    x: '5月',
+    y: 278,
+  },
+  {
+    x: '6月',
+    y: 1125,
+  },
+  {
+    x: '7月',
+    y: 247,
+  },
+  {
+    x: '8月',
+    y: 624,
+  },
+  {
+    x: '9月',
+    y: 439,
+  },
+  {
+    x: '10月',
+    y: 256,
+  },
+  {
+    x: '11月',
+    y: 879,
+  },
+  {
+    x: '12月',
+    y: 455,
+  },
+];
+
+export const barData2 = [
+  {
+    x: '1月',
+    y: 1159,
+  },
+  {
+    x: '2月',
+    y: 584,
+  },
+  {
+    x: '3月',
+    y: 1146,
+  },
+  {
+    x: '4月',
+    y: 842,
+  },
+  {
+    x: '5月',
+    y: 278,
+  },
+  {
+    x: '6月',
+    y: 426,
+  },
+  {
+    x: '7月',
+    y: 508,
+  },
+  {
+    x: '8月',
+    y: 1095,
+  },
+  {
+    x: '9月',
+    y: 861,
+  },
+  {
+    x: '10月',
+    y: 585,
+  },
+  {
+    x: '11月',
+    y: 884,
+  },
+  {
+    x: '12月',
+    y: 1107,
+  },
+];
+
+export const rankList = {
+  'zh-CN': [
+    {
+      name: '白鹭岛 1 号店',
+      value: '1234.56',
+    },
+    {
+      name: '白鹭岛 2 号店',
+      value: '1134.56',
+    },
+    {
+      name: '白鹭岛 3 号店',
+      value: '1034.56',
+    },
+    {
+      name: '白鹭岛 4 号店',
+      value: '934.56',
+    },
+    {
+      name: '白鹭岛 5 号店',
+      value: '834.56',
+    },
+    {
+      name: '白鹭岛 6 号店',
+      value: '734.56',
+    },
+    {
+      name: '白鹭岛 7 号店',
+      value: '634.56',
+    },
+  ],
+  'en-US': [
+    {
+      name: 'Bailudao No.1 Store',
+      value: '1234.56',
+    },
+    {
+      name: 'Bailudao No.2 Store',
+      value: '1134.56',
+    },
+    {
+      name: 'Bailudao No.3 Store',
+      value: '1034.56',
+    },
+    {
+      name: 'Bailudao No.4 Store',
+      value: '934.56',
+    },
+    {
+      name: 'Bailudao No.5 Store',
+      value: '834.56',
+    },
+    {
+      name: 'Bailudao No.6 Store',
+      value: '734.56',
+    },
+    {
+      name: 'Bailudao No.7 Store',
+      value: '634.56',
+    },
+  ],
+};

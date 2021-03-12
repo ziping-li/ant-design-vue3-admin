@@ -4,7 +4,8 @@ import { useRouter, useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import * as antIcons from '@ant-design/icons-vue';
 import Scroll from '@convue-lib/scroll';
-import { Menu, ActionTypes } from '../../store/index';
+import { ActionTypes } from '../../store/index';
+import { Menu } from '../../config/types';
 
 const Icons: any = antIcons;
 

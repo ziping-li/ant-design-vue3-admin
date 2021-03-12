@@ -1,42 +1,16 @@
 import { MutationTree, ActionTree, ActionContext } from 'vuex';
 import Cookies from 'js-cookie';
 import { userToken } from '../config/constants';
+import { LoginParams, UserInfo, Notification, Menu } from '../config/types';
 
-// Request Data Types
+// Request Data Url
 const LOGIN_URL = '/login';
 const QUERY_URL = '/queryUserInfo';
 const NOTIFICATION_URL = '/notification';
 const MENU_URL = '/menu';
-export interface LoginParams {
-  username: string;
-  password: string;
-}
-export interface UserInfo {
-  id: number;
-  name: string;
-  nickname: string;
-  password?: string;
-  role: string;
-  permissions: string[];
-}
-export interface Notification {
-  id: number;
-  type: number;
-  title: Record<string, string>;
-  time: string;
-  isReaded: boolean;
-}
-export interface Menu {
-  id: number;
-  name: string;
-  icon: string;
-  path?: string;
-  permissionCode?: string;
-  children: Menu[];
-}
 
 // State
-type State = {
+export type State = {
   userInfo: Partial<UserInfo>;
   notifications: Notification[];
   menu: Menu[];

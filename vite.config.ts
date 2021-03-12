@@ -17,7 +17,6 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
           javascriptEnabled: true,
           modifyVars: {
             'primary-color': primaryColor,
-            'heading-color': textColor,
             'text-color': textColor,
             'card-head-color': textColor,
           },

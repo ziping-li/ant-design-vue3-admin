@@ -1,6 +1,6 @@
 import { defineComponent, PropType } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { Notification } from '../../store/index';
+import { Notification } from '../../config/types';
 
 export default defineComponent({
   props: {
