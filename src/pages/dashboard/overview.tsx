@@ -64,7 +64,7 @@ export default defineComponent({
     });
 
     return () => (
-      <div class="px-3 pb-5">
+      <div class="px-4 pb-4">
         <a-row gutter={[20, 20]}>
           <a-col span={24} sm={24} md={12} xl={6}>
             <chart-card
