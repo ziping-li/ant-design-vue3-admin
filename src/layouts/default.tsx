@@ -1,5 +1,6 @@
 import { defineComponent, ref } from 'vue';
 import { useToggle } from '@ant-design-vue/use';
+import Scroll from '@convue-lib/scroll';
 import { queryMedia } from '@convue-lib/utils';
 import './default.less';
 
@@ -44,9 +45,11 @@ export default defineComponent({
         <a-layout>
           <layout-header collapsed={collapsed.value} onToggle={toggle}></layout-header>
           <visited-tags></visited-tags>
-          <a-layout-content class="layout-content">
-            <router-view></router-view>
-          </a-layout-content>
+          <Scroll>
+            <a-layout-content class="flex-1">
+              <router-view></router-view>
+            </a-layout-content>
+          </Scroll>
         </a-layout>
       </a-layout>
     );
