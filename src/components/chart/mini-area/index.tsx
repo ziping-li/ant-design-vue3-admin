@@ -1,4 +1,4 @@
-import { defineComponent, onMounted, PropType } from 'vue';
+import { defineComponent, onMounted, PropType, watch, computed, onBeforeUnmount } from 'vue';
 import { Area } from '@antv/g2plot';
 import * as uuid from 'uuid';
 import './index.less';
@@ -21,12 +21,18 @@ export default defineComponent({
       type: Array as PropType<Field[]>,
       default: () => [],
     },
+    line: {
+      type: Boolean,
+      default: false,
+    },
     formatter: {
       type: Function,
     },
   },
   setup(props) {
     const produceId = props.id || uuid.v4();
+    let area: any;
+    const currentData = computed(() => props.data);
 
     onMounted(() => {
       const options: any = {
@@ -35,15 +41,34 @@ export default defineComponent({
         yField: 'y',
         xAxis: false,
         yAxis: false,
+        smooth: true,
         autoFit: true,
+        padding: [4, 0, 0, 0],
       };
       if (props.formatter) {
         options.tooltip = {
           formatter: props.formatter,
         };
       }
-      const area = new Area(produceId, options);
+      if (!props.line) {
+        options.line = false;
+        options.areaStyle = {
+          fillOpacity: 0.8,
+        };
+      }
+      area = new Area(produceId, options);
       area.render();
+    });
+
+    onBeforeUnmount(() => {
+      area.destroy();
+      area = null;
+    });
+
+    watch(currentData, () => {
+      if (area) {
+        area.changeData(currentData.value);
+      }
     });
 
     return () => (

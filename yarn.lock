@@ -1110,6 +1110,21 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@convue-lib/data-table@^0.1.13":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@convue-lib/data-table/-/data-table-0.1.13.tgz#cd102780344cfb8c230a7c646a8430d2f0ce2e58"
+  integrity sha512-JUDgRc0+ZPrU/5WlkmPDua5GyKJsORECs9ej1n6hM/THAS9EGj8L9tLd02UCi5bNS7ZzBG/01FzlCTV9E2QrKg==
+  dependencies:
+    "@convue-lib/data-view" "^0.1.13"
+    "@convue-lib/utils" "^0.1.13"
+
+"@convue-lib/data-view@^0.1.13":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@convue-lib/data-view/-/data-view-0.1.13.tgz#b816b857cd0559937fb3e988fde2a5f8a8b911a7"
+  integrity sha512-5yL6J3bHNKlS5nisEZRDWLiUS3/4Q89q5226VtxsniVEMmM+Dfs3/6PrVriUP0WYu+TJAKjzCFStTRuZD2e4/Q==
+  dependencies:
+    "@convue-lib/utils" "^0.1.13"
+
 "@convue-lib/scroll@0.1.13":
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/@convue-lib/scroll/-/scroll-0.1.13.tgz#98cda68587e49a4746d2614dcf03fc5ac8ff2604"

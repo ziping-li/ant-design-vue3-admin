@@ -568,3 +568,46 @@ export const rankList = {
     },
   ],
 };
+
+let searchZhCNData = [];
+let searchEnUSData = [];
+for (let i = 0; i < 50; i += 1) {
+  searchZhCNData.push({
+    index: i + 1,
+    keyword: `搜索关键词-${i + 1}`,
+    count: Math.floor(Math.random() * 1000),
+    range: Math.floor(Math.random() * 100),
+    status: Math.floor((Math.random() * 10) % 2),
+  });
+  searchEnUSData.push({
+    index: i + 1,
+    keyword: `Search Keyword-${i + 1}`,
+    count: Math.floor(Math.random() * 1000),
+    range: Math.floor(Math.random() * 100),
+    status: Math.floor((Math.random() * 10) % 2),
+  });
+}
+
+export const searchData = {
+  'en-US': searchEnUSData,
+  'zh-CN': searchZhCNData,
+};
+
+export const pieData = {
+  'en-US': [
+    { type: 'Household appliances', value: 27 },
+    { type: 'edible wine', value: 20 },
+    { type: 'Personal health care', value: 18 },
+    { type: 'clothing luggage', value: 15 },
+    { type: 'Mother and baby products', value: 10 },
+    { type: 'Other', value: 5 },
+  ],
+  'zh-CN': [
+    { type: '家用电器', value: 32 },
+    { type: '食用酒水', value: 20 },
+    { type: '个护健康', value: 18 },
+    { type: '服饰箱包', value: 15 },
+    { type: '母婴产品', value: 10 },
+    { type: '其他', value: 5 },
+  ],
+};

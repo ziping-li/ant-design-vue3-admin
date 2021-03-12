@@ -10,18 +10,52 @@
 import { computed, defineComponent, onMounted } from 'vue';
 import { useToggle } from '@ant-design-vue/use';
 import { useI18n } from 'vue-i18n';
-import { InfoCircleOutlined } from '@ant-design/icons-vue';
+import { InfoCircleOutlined, EllipsisOutlined } from '@ant-design/icons-vue';
 import { numeral } from '@convue-lib/utils';
 import { Datum } from '@antv/g2plot';
 import { Lang } from '../../config/types';
-import { miniArea, miniBar, barData, barData2, rankList } from '../../../schemes/charts';
+import {
+  miniArea,
+  miniBar,
+  barData,
+  barData2,
+  rankList,
+  searchData,
+  pieData,
+} from '../../../schemes/charts';
 
 export default defineComponent({
   setup() {
     const [loading, { toggle }] = useToggle(true);
     const { t, locale } = useI18n();
-    const lang = locale.value;
-    const rankLocaleList = computed(() => rankList[lang as Lang]);
+
+    const rankLocaleList = computed(() => rankList[locale.value as Lang]);
+
+    const searchTableColumns = computed(() => [
+      {
+        dataIndex: 'index',
+        title: t('Overview.Table.Rank'),
+        width: 90,
+      },
+      {
+        dataIndex: 'keyword',
+        title: t('Overview.Table.SearchKeyword'),
+      },
+      {
+        dataIndex: 'count',
+        title: t('Overview.Table.Users'),
+      },
+      {
+        dataIndex: 'range',
+        title: t('Overview.Table.WeeklyRange'),
+        align: 'right',
+        sorter: (a: any, b: any) => a.range - b.range,
+        slots: { customRender: 'range' },
+      },
+    ]);
+    const searchLocaleData = computed(() => searchData[locale.value as Lang]);
+
+    const pieLocaleData = computed(() => pieData[locale.value as Lang]);
 
     onMounted(() => {
       setTimeout(() => {
@@ -30,7 +64,7 @@ export default defineComponent({
     });
 
     return () => (
-      <div class="px-3">
+      <div class="px-3 pb-5">
         <a-row gutter={[20, 20]}>
           <a-col span={24} sm={24} md={12} xl={6}>
             <chart-card
@@ -91,6 +125,7 @@ export default defineComponent({
             >
               <div style="transform: translateY(10px);">
                 <chart-mini-area
+                  line
                   data={miniArea}
                   formatter={(datum: Datum) => ({ name: t('Overview.Visits'), value: datum.y })}
                 ></chart-mini-area>
@@ -174,90 +209,225 @@ export default defineComponent({
           bordered={false}
           body-style={{ padding: '0', overflow: 'hidden' }}
         >
-          <div class="salesCard">
-            <a-tabs
-              default-active-key="1"
-              size="large"
-              tab-bar-style={{ marginBottom: '24px', paddingLeft: '16px' }}
-              v-slots={{
-                tabBarExtraContent: () => (
-                  <div class="d-none d-lg-block pr-4">
-                    <a-radio-group class="mr-3" default-value="1" button-style="outline">
-                      <a-radio-button value="1">{t('Overview.AllDay')}</a-radio-button>
-                      <a-radio-button value="2">{t('Overview.AllWeek')}</a-radio-button>
-                      <a-radio-button value="3">{t('Overview.AllMonth')}</a-radio-button>
-                      <a-radio-button value="4">{t('Overview.AllYear')}</a-radio-button>
-                    </a-radio-group>
-                    <a-range-picker style={{ width: '256px' }} />
+          <a-tabs
+            default-active-key="1"
+            size="large"
+            tab-bar-style={{ marginBottom: '24px', paddingLeft: '16px' }}
+            v-slots={{
+              tabBarExtraContent: () => (
+                <div class="d-none d-lg-block pr-4">
+                  <a-radio-group class="mr-3" default-value="1" button-style="outline">
+                    <a-radio-button value="1">{t('Overview.AllDay')}</a-radio-button>
+                    <a-radio-button value="2">{t('Overview.AllWeek')}</a-radio-button>
+                    <a-radio-button value="3">{t('Overview.AllMonth')}</a-radio-button>
+                    <a-radio-button value="4">{t('Overview.AllYear')}</a-radio-button>
+                  </a-radio-group>
+                  <a-range-picker style={{ width: '256px' }} />
+                </div>
+              ),
+            }}
+          >
+            <a-tab-pane loading={loading.value} tab={t('Overview.Sales')} key="1">
+              <div class="d-block d-lg-none pl-4 pb-2">
+                <a-radio-group class="mb-3 mr-3" default-value="1" button-style="outline">
+                  <a-radio-button value="1">{t('Overview.AllDay')}</a-radio-button>
+                  <a-radio-button value="2">{t('Overview.AllWeek')}</a-radio-button>
+                  <a-radio-button value="3">{t('Overview.AllMonth')}</a-radio-button>
+                  <a-radio-button value="4">{t('Overview.AllYear')}</a-radio-button>
+                </a-radio-group>
+                <a-range-picker style={{ width: '256px' }} />
+              </div>
+              <a-row>
+                <a-col xl={16} lg={12} md={12} sm={24} xs={24}>
+                  <div class="p-8 pr-md-0 pt-md-0">
+                    <chart-bar
+                      data={barData}
+                      title={t('Overview.SalesTrend')}
+                      tooltipFormatter={(datum: Datum) => ({
+                        name: t('Overview.Sales'),
+                        value: datum.y,
+                      })}
+                    ></chart-bar>
                   </div>
+                </a-col>
+                <a-col xl={8} lg={12} md={12} sm={24} xs={24}>
+                  <rank-list
+                    title={t('Overview.SalesRanking')}
+                    list={rankLocaleList.value}
+                  ></rank-list>
+                </a-col>
+              </a-row>
+            </a-tab-pane>
+            <a-tab-pane tab={t('Overview.Visits')} key="2">
+              <div class="d-block d-lg-none pl-4 pb-2">
+                <a-radio-group class="mb-3 mr-3" default-value="1" button-style="outline">
+                  <a-radio-button value="1">{t('Overview.AllDay')}</a-radio-button>
+                  <a-radio-button value="2">{t('Overview.AllWeek')}</a-radio-button>
+                  <a-radio-button value="3">{t('Overview.AllMonth')}</a-radio-button>
+                  <a-radio-button value="4">{t('Overview.AllYear')}</a-radio-button>
+                </a-radio-group>
+                <a-range-picker style={{ width: '256px' }} />
+              </div>
+              <a-row>
+                <a-col xl={16} lg={12} md={12} sm={24} xs={24}>
+                  <div class="p-8 pr-md-0 pt-md-0">
+                    <chart-bar
+                      data={barData2}
+                      title={t('Overview.VisitsTrend')}
+                      tooltipFormatter={(datum: Datum) => ({
+                        name: t('Overview.Sales'),
+                        value: datum.y,
+                      })}
+                    ></chart-bar>
+                  </div>
+                </a-col>
+                <a-col xl={8} lg={12} md={12} sm={24} xs={24}>
+                  <rank-list
+                    title={t('Overview.VisitsRanking')}
+                    list={rankLocaleList.value}
+                  ></rank-list>
+                </a-col>
+              </a-row>
+            </a-tab-pane>
+          </a-tabs>
+        </a-card>
+
+        <a-row gutter={20} type="flex">
+          <a-col class="mt-5" xl={12} lg={24} md={24} sm={24} xs={24}>
+            <a-card
+              loading={loading.value}
+              bordered={false}
+              title={t('Overview.OnlineTopSearch')}
+              style={{ height: '100%' }}
+              v-slots={{
+                extra: () => (
+                  <a-dropdown
+                    trigger={['click']}
+                    placement="bottomLeft"
+                    v-slots={{
+                      overlay: () => (
+                        <a-menu>
+                          <a-menu-item>{t('Overview.OperationOne')}</a-menu-item>
+                          <a-menu-item>{t('Overview.OperationTwo')}</a-menu-item>
+                        </a-menu>
+                      ),
+                    }}
+                  >
+                    <EllipsisOutlined />
+                  </a-dropdown>
                 ),
               }}
             >
-              <a-tab-pane loading={loading.value} tab={t('Overview.Sales')} key="1">
-                <div class="d-block d-lg-none pl-4 pb-2">
-                  <a-radio-group class="mb-3 mr-3" default-value="1" button-style="outline">
-                    <a-radio-button value="1">{t('Overview.AllDay')}</a-radio-button>
-                    <a-radio-button value="2">{t('Overview.AllWeek')}</a-radio-button>
-                    <a-radio-button value="3">{t('Overview.AllMonth')}</a-radio-button>
-                    <a-radio-button value="4">{t('Overview.AllYear')}</a-radio-button>
-                  </a-radio-group>
-                  <a-range-picker style={{ width: '256px' }} />
-                </div>
-                <a-row>
-                  <a-col xl={16} lg={12} md={12} sm={24} xs={24}>
-                    <div class="p-8 pr-md-0 pt-md-0">
-                      <chart-bar
-                        data={barData}
-                        title={t('Overview.SalesTrend')}
-                        tooltipFormatter={(datum: Datum) => ({
-                          name: t('Overview.Sales'),
-                          value: datum.y,
-                        })}
-                      ></chart-bar>
-                    </div>
-                  </a-col>
-                  <a-col xl={8} lg={12} md={12} sm={24} xs={24}>
-                    <rank-list
-                      title={t('Overview.SalesRanking')}
-                      list={rankLocaleList.value}
-                    ></rank-list>
-                  </a-col>
-                </a-row>
-              </a-tab-pane>
-              <a-tab-pane tab={t('Overview.Visits')} key="2">
-                <div class="d-block d-lg-none pl-4 pb-2">
-                  <a-radio-group class="mb-3 mr-3" default-value="1" button-style="outline">
-                    <a-radio-button value="1">{t('Overview.AllDay')}</a-radio-button>
-                    <a-radio-button value="2">{t('Overview.AllWeek')}</a-radio-button>
-                    <a-radio-button value="3">{t('Overview.AllMonth')}</a-radio-button>
-                    <a-radio-button value="4">{t('Overview.AllYear')}</a-radio-button>
-                  </a-radio-group>
-                  <a-range-picker style={{ width: '256px' }} />
-                </div>
-                <a-row>
-                  <a-col xl={16} lg={12} md={12} sm={24} xs={24}>
-                    <div class="p-8 pr-md-0 pt-md-0">
-                      <chart-bar
-                        data={barData2}
-                        title={t('Overview.VisitsTrend')}
-                        tooltipFormatter={(datum: Datum) => ({
-                          name: t('Overview.Sales'),
-                          value: datum.y,
-                        })}
-                      ></chart-bar>
-                    </div>
-                  </a-col>
-                  <a-col xl={8} lg={12} md={12} sm={24} xs={24}>
-                    <rank-list
-                      title={t('Overview.VisitsRanking')}
-                      list={rankLocaleList.value}
-                    ></rank-list>
-                  </a-col>
-                </a-row>
-              </a-tab-pane>
-            </a-tabs>
-          </div>
-        </a-card>
+              <a-row gutter={40}>
+                <a-col class="mb-5" xs={24} sm={12}>
+                  <number-info
+                    total={12321}
+                    sub-total={17.1}
+                    v-slots={{
+                      subtitle: () => (
+                        <>
+                          <span>{t('Overview.SearchUsers')}</span>
+                          <a-tooltip title={t('Overview.Introduce')}>
+                            <InfoCircleOutlined class="ml-2" />
+                          </a-tooltip>
+                        </>
+                      ),
+                    }}
+                  ></number-info>
+                  <div class="mt-2">
+                    <chart-mini-area
+                      data={miniBar}
+                      formatter={(datum: Datum) => ({
+                        name: t('Overview.SearchUsers'),
+                        value: datum.y,
+                      })}
+                    />
+                  </div>
+                </a-col>
+                <a-col class="mb-5" xs={24} sm={12}>
+                  <number-info
+                    total={2.7}
+                    sub-total={26.2}
+                    status="down"
+                    v-slots={{
+                      subtitle: () => (
+                        <>
+                          <span>{t('Overview.PerCapitaSearch')}</span>
+                          <a-tooltip title={t('Overview.Introduce')}>
+                            <InfoCircleOutlined class="ml-2" />
+                          </a-tooltip>
+                        </>
+                      ),
+                    }}
+                  ></number-info>
+                  <div class="mt-2">
+                    <chart-mini-area
+                      data={miniBar}
+                      formatter={(datum: Datum) => ({
+                        name: t('Overview.PerCapitaSearch'),
+                        value: datum.y,
+                      })}
+                    />
+                  </div>
+                </a-col>
+              </a-row>
+              <a-table
+                row-key="index"
+                size="small"
+                columns={searchTableColumns.value}
+                dataSource={searchLocaleData.value}
+                pagination={{ pageSize: 5 }}
+                v-slots={{
+                  range: (scope: any) => {
+                    return (
+                      <trend flag={scope.record.status === 0 ? 'up' : 'down'}>{scope.text}%</trend>
+                    );
+                  },
+                }}
+              ></a-table>
+            </a-card>
+          </a-col>
+          <a-col class="mt-5" xl={12} lg={24} md={24} sm={24} xs={24}>
+            <a-card
+              loading={loading.value}
+              bordered={false}
+              title={t('Overview.TheProportionOfSales')}
+              style={{ height: '100%' }}
+              v-slots={{
+                extra: () => (
+                  <>
+                    <a-radio-group defaultValue="a">
+                      <a-radio-button value="a">{t('Overview.Channel.All')}</a-radio-button>
+                      <a-radio-button value="b">{t('Overview.Channel.Online')}</a-radio-button>
+                      <a-radio-button value="c">{t('Overview.Channel.Stores')}</a-radio-button>
+                    </a-radio-group>
+
+                    <a-dropdown
+                      trigger={['click']}
+                      placement="bottomLeft"
+                      v-slots={{
+                        overlay: () => (
+                          <a-menu>
+                            <a-menu-item>{t('Overview.OperationOne')}</a-menu-item>
+                            <a-menu-item>{t('Overview.OperationTwo')}</a-menu-item>
+                          </a-menu>
+                        ),
+                      }}
+                    >
+                      <EllipsisOutlined class="ml-3" />
+                    </a-dropdown>
+                  </>
+                ),
+              }}
+            >
+              <chart-pie
+                title={t('Overview.Sales')}
+                data={pieLocaleData.value}
+                inner-radius={0.6}
+              ></chart-pie>
+            </a-card>
+          </a-col>
+        </a-row>
       </div>
     );
   },

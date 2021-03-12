@@ -1,11 +1,10 @@
-import { defineComponent, onBeforeUnmount, onMounted, PropType, watch, computed } from 'vue';
-import { Column } from '@antv/g2plot';
+import { defineComponent, onMounted, PropType, onBeforeUnmount, watch, computed } from 'vue';
+import { Pie } from '@antv/g2plot';
 import * as uuid from 'uuid';
 
 interface Field {
-  x: string | number;
-  y: string | number;
-  seriesField?: string | number;
+  type: string | number;
+  value: string | number;
 }
 
 export default defineComponent({
@@ -18,43 +17,40 @@ export default defineComponent({
     },
     height: {
       type: [String, Number],
-      default: '300px',
+      default: '340px',
     },
     data: {
       type: Array as PropType<Field[]>,
       default: () => [],
     },
-    yFormatter: {
-      type: Function,
-      default: (v: any) => v,
+    innerRadius: {
+      type: Number,
+      default: 0,
     },
-    tooltipFormatter: {
+    formatter: {
       type: Function,
     },
   },
   setup(props) {
     const produceId = props.id || uuid.v4();
-    let bar: any;
+    let pie: any;
     const currentData = computed(() => props.data);
 
     onMounted(() => {
       const options: any = {
+        appendPadding: 40,
+        angleField: 'value',
+        colorField: 'type',
         data: props.data,
-        xField: 'x',
-        yField: 'y',
-        yAxis: {
-          grid: {
-            line: {
-              style: {
-                lineDash: [2, 4],
-              },
-            },
-          },
-          label: {
-            formatter: props.yFormatter,
-          },
-        },
         autoFit: true,
+        radius: 1,
+        innerRadius: props.innerRadius,
+        label: false,
+        statistic: false,
+        legend: {
+          layout: 'horizontal',
+          position: 'bottom',
+        },
         theme: {
           colors10: [
             '#5B8FF9',
@@ -70,26 +66,23 @@ export default defineComponent({
           ],
         },
       };
-      if (props.tooltipFormatter) {
+      if (props.formatter) {
         options.tooltip = {
-          formatter: props.tooltipFormatter,
+          formatter: props.formatter,
         };
       }
-      if (props.data[0].seriesField) {
-        options.seriesField = 'seriesField';
-      }
-      bar = new Column(produceId, options);
-      bar.render();
+      pie = new Pie(produceId, options);
+      pie.render();
     });
 
     onBeforeUnmount(() => {
-      bar.destroy();
-      bar = null;
+      pie.destroy();
+      pie = null;
     });
 
     watch(currentData, () => {
-      if (bar) {
-        bar.changeData(currentData.value);
+      if (pie) {
+        pie.changeData(currentData.value);
       }
     });
 

@@ -68,6 +68,23 @@ export default {
     VisitsTrend: 'Visits Trend',
     SalesRanking: 'Sales Ranking',
     VisitsRanking: 'Visits Ranking',
+    OnlineTopSearch: 'Online Top Search',
+    OperationOne: 'Operation One',
+    OperationTwo: 'Operation Two',
+    SearchUsers: 'Search Users',
+    PerCapitaSearch: 'Per Capita Search',
+    Table: {
+      Rank: 'Rank',
+      SearchKeyword: 'Keyword',
+      Users: 'Users',
+      WeeklyRange: 'Weekly Range',
+    },
+    TheProportionOfSales: "The Proportion Of Sales",
+    Channel: {
+      All: 'All',
+      Online: 'Online',
+      Stores: 'Stores',
+    },
   },
   Workplace: {
     Title: 'Workplace',

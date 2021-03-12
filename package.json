@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "@antv/g2plot": "^2.3.14",
+    "@convue-lib/data-table": "^0.1.13",
     "@convue-lib/scroll": "0.1.13",
     "@convue-lib/styles": "^0.1.12",
     "@convue-lib/utils": "^0.1.12",

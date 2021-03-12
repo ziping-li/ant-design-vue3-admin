@@ -1,4 +1,4 @@
-import { defineComponent, onMounted, PropType } from 'vue';
+import { defineComponent, onMounted, PropType, watch, computed, onBeforeUnmount } from 'vue';
 import { Column } from '@antv/g2plot';
 import * as uuid from 'uuid';
 import './index.less';
@@ -27,6 +27,8 @@ export default defineComponent({
   },
   setup(props) {
     const produceId = props.id || uuid.v4();
+    let bar: any;
+    const currentData = computed(() => props.data);
 
     onMounted(() => {
       const options: any = {
@@ -42,8 +44,19 @@ export default defineComponent({
           formatter: props.formatter,
         };
       }
-      const area = new Column(produceId, options);
-      area.render();
+      bar = new Column(produceId, options);
+      bar.render();
+    });
+
+    onBeforeUnmount(() => {
+      bar.destroy();
+      bar = null;
+    });
+
+    watch(currentData, () => {
+      if (bar) {
+        bar.changeData(currentData.value);
+      }
     });
 
     return () => (
