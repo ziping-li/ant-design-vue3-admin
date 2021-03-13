@@ -5,6 +5,7 @@ import convue from 'convue';
 import {
   primaryColor,
   textColor,
+  defaultLocale,
   i18nUseCookie,
   mockServerProdEnable,
 } from './src/config/constants';
@@ -46,6 +47,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
           },
         },
         locale: {
+          defaultLocale,
           useCookie: i18nUseCookie,
         },
         styles: ['ant-design-vue/dist/antd.less', '@convue-lib/styles'],

@@ -611,3 +611,466 @@ export const pieData = {
     { type: '其他', value: 5 },
   ],
 };
+
+export const projects = {
+  'en-US': [
+    {
+      id: 1,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png',
+      name: 'Alipay',
+      description: "It's an inner thing, they can't reach it, and they can't reach it",
+      author: 'Scientific Moving Brick Group',
+      time: '9 hours ago',
+    },
+    {
+      id: 2,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png',
+      name: 'Angular',
+      description: 'Hope is a good thing, maybe the best, good things will not die out',
+      author: 'Scientific Moving Brick Group',
+      time: '9 hours ago',
+    },
+    {
+      id: 3,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png',
+      name: 'Ant Design',
+      description: 'There are so many taverns in the town, but she just walked into my tavern',
+      author: 'Scientific Moving Brick Group',
+      time: '9 hours ago',
+    },
+    {
+      id: 4,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png',
+      name: 'Ant Design Pro',
+      description:
+        'At that time I only thought about what I wanted, never wanted to have what I had',
+      author: 'Scientific Moving Brick Group',
+      time: '9 hours ago',
+    },
+    {
+      id: 5,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/siCrBXXhmvTQGWPNLBow.png',
+      name: 'Bootstrap',
+      description: 'Winter is coming',
+      author: 'Scientific Moving Brick Group',
+      time: '9 hours ago',
+    },
+    {
+      id: 6,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png',
+      name: 'Vue',
+      description: 'Life is like a box of chocolates, the results are often unexpected',
+      author: 'Scientific Moving Brick Group',
+      time: '9 hours ago',
+    },
+  ],
+  'zh-CN': [
+    {
+      id: 1,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png',
+      name: 'Alipay',
+      description: '那是一种内在的东西， 他们到达不了，也无法触及的',
+      author: '科学搬砖组',
+      time: '9小时前',
+    },
+    {
+      id: 2,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png',
+      name: 'Angular',
+      description: '希望是一个好东西，也许是最好的，好东西是不会消亡的',
+      author: '科学搬砖组',
+      time: '9小时前',
+    },
+    {
+      id: 3,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png',
+      name: 'Ant Design',
+      description: '城镇中有那么多的酒馆，她却偏偏走进了我的酒馆',
+      author: '科学搬砖组',
+      time: '9小时前',
+    },
+    {
+      id: 4,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png',
+      name: 'Ant Design Pro',
+      description: '那时候我只会想自己想要什么，从不想自己拥有什么',
+      author: '科学搬砖组',
+      time: '9小时前',
+    },
+    {
+      id: 5,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/siCrBXXhmvTQGWPNLBow.png',
+      name: 'Bootstrap',
+      description: '凛冬将至',
+      author: '科学搬砖组',
+      time: '9小时前',
+    },
+    {
+      id: 6,
+      logo: 'https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png',
+      name: 'Vue',
+      description: '生命就像一盒巧克力，结果往往出人意料',
+      author: '科学搬砖组',
+      time: '9小时前',
+    },
+  ],
+};
+
+export const movements = {
+  'en-US': [
+    {
+      id: 1,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
+      name: 'Blueberry sauce',
+      team: 'Egret Soy Sauce Development Team',
+      operation: 'Delete',
+      content: 'Fan Group Project',
+      time: '2018-08-23 14:47:00',
+    },
+    {
+      id: 2,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/cnrhVkzwxjPwAaCfPbdc.png',
+      name: 'Blueberry sauce',
+      team: 'Egret Soy Sauce Development Team',
+      operation: 'Update',
+      content: 'Fan Group Project',
+      time: '2018-08-23 14:47:00',
+    },
+    {
+      id: 3,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/gaOngJwsRYRaVAuXXcmB.png',
+      name: 'Blueberry sauce',
+      team: 'Egret Soy Sauce Development Team',
+      operation: 'Update',
+      content: 'Fan Group Project',
+      time: '2018-08-23 14:47:00',
+    },
+    {
+      id: 4,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/ubnKSIfAJTxIgXOKlciN.png',
+      name: 'Blueberry sauce',
+      team: 'Egret Soy Sauce Development Team',
+      operation: 'Update',
+      content: 'Fan Group Project',
+      time: '2018-08-23 14:47:00',
+    },
+    {
+      id: 5,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/WhxKECPNujWoWEFNdnJE.png',
+      name: 'Blueberry sauce',
+      team: 'Egret Soy Sauce Development Team',
+      operation: 'Create',
+      content: 'Fan Group Project',
+      time: '2018-08-23 14:47:00',
+    },
+    {
+      id: 6,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/gaOngJwsRYRaVAuXXcmB.png',
+      name: 'Blueberry sauce',
+      team: 'Egret Soy Sauce Development Team',
+      operation: 'Update',
+      content: 'Fan Group Project',
+      time: '2018-08-23 14:47:00',
+    },
+  ],
+  'zh-CN': [
+    {
+      id: 1,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
+      name: '蓝莓酱',
+      team: '白鹭酱油开发组',
+      operation: '删除',
+      content: '番组计划',
+      time: '2018-08-23 14:47:00',
+    },
+    {
+      id: 2,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/cnrhVkzwxjPwAaCfPbdc.png',
+      name: '蓝莓酱',
+      team: '白鹭酱油开发组',
+      operation: '更新',
+      content: '番组计划',
+      time: '2018-08-23 14:47:00',
+    },
+    {
+      id: 3,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/gaOngJwsRYRaVAuXXcmB.png',
+      name: '蓝莓酱',
+      team: '白鹭酱油开发组',
+      operation: '更新',
+      content: '番组计划',
+      time: '2018-08-23 14:47:00',
+    },
+    {
+      id: 4,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/ubnKSIfAJTxIgXOKlciN.png',
+      name: '蓝莓酱',
+      team: '白鹭酱油开发组',
+      operation: '更新',
+      content: '番组计划',
+      time: '2018-08-23 14:47:00',
+    },
+    {
+      id: 5,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/WhxKECPNujWoWEFNdnJE.png',
+      name: '蓝莓酱',
+      team: '白鹭酱油开发组',
+      operation: '创建',
+      content: '番组计划',
+      time: '2018-08-23 14:47:00',
+    },
+    {
+      id: 6,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/gaOngJwsRYRaVAuXXcmB.png',
+      name: '蓝莓酱',
+      team: '白鹭酱油开发组',
+      operation: '更新',
+      content: '番组计划',
+      time: '2018-08-23 14:47:00',
+    },
+  ],
+};
+
+export const teams = {
+  'en-US': [
+    {
+      id: 1,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
+      name: 'Scientific Brick Group',
+    },
+    {
+      id: 2,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/cnrhVkzwxjPwAaCfPbdc.png',
+      name: "Programmer's daily",
+    },
+    {
+      id: 3,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/gaOngJwsRYRaVAuXXcmB.png',
+      name: 'Design Tiantuan',
+    },
+    {
+      id: 4,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/ubnKSIfAJTxIgXOKlciN.png',
+      name: 'Second Girl Group',
+    },
+    {
+      id: 5,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/WhxKECPNujWoWEFNdnJE.png',
+      name: 'Cheat you to learn',
+    },
+  ],
+  'zh-CN': [
+    {
+      id: 1,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
+      name: '科学搬砖组',
+    },
+    {
+      id: 2,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/cnrhVkzwxjPwAaCfPbdc.png',
+      name: '程序员日常',
+    },
+    {
+      id: 3,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/gaOngJwsRYRaVAuXXcmB.png',
+      name: '设计天团',
+    },
+    {
+      id: 4,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/ubnKSIfAJTxIgXOKlciN.png',
+      name: '中二少女团',
+    },
+    {
+      id: 5,
+      avatar: 'https://gw.alipayobjects.com/zos/rmsportal/WhxKECPNujWoWEFNdnJE.png',
+      name: '骗你学计算机',
+    },
+  ],
+};
+
+export const radarData = {
+  'en-US': [
+    {
+      x: 'quote',
+      seriesField: 'Personal',
+      y: 70,
+    },
+    {
+      x: 'quote',
+      seriesField: 'Team',
+      y: 30,
+    },
+    {
+      x: 'quote',
+      seriesField: 'Department',
+      y: 60,
+    },
+    {
+      x: 'Word of mouth',
+      seriesField: 'Personal',
+      y: 70,
+    },
+    {
+      x: 'Word of mouth',
+      seriesField: 'Team',
+      y: 50,
+    },
+    {
+      x: 'Word of mouth',
+      seriesField: 'Department',
+      y: 60,
+    },
+    {
+      x: 'Yield',
+      seriesField: 'Personal',
+      y: 40,
+    },
+    {
+      x: 'Yield',
+      seriesField: 'Team',
+      y: 50,
+    },
+    {
+      x: 'Yield',
+      seriesField: 'Department',
+      y: 60,
+    },
+    {
+      x: 'Contribution',
+      seriesField: 'Personal',
+      y: 70,
+    },
+    {
+      x: 'Contribution',
+      seriesField: 'Team',
+      y: 70,
+    },
+    {
+      x: 'Contribution',
+      seriesField: 'Department',
+      y: 50,
+    },
+    {
+      x: 'hotness',
+      seriesField: 'Personal',
+      y: 50,
+    },
+    {
+      x: 'hotness',
+      seriesField: 'Team',
+      y: 40,
+    },
+    {
+      x: 'hotness',
+      seriesField: 'Department',
+      y: 30,
+    },
+    {
+      x: 'quote',
+      seriesField: 'Personal',
+      y: 40,
+    },
+    {
+      x: 'quote',
+      seriesField: 'Team',
+      y: 60,
+    },
+    {
+      x: 'quote',
+      seriesField: 'Department',
+      y: 40,
+    },
+  ],
+  'zh-CN': [
+    {
+      x: '引用',
+      seriesField: '个人',
+      y: 70,
+    },
+    {
+      x: '引用',
+      seriesField: '团队',
+      y: 30,
+    },
+    {
+      x: '引用',
+      seriesField: '部门',
+      y: 60,
+    },
+    {
+      x: '口碑',
+      seriesField: '个人',
+      y: 70,
+    },
+    {
+      x: '口碑',
+      seriesField: '团队',
+      y: 50,
+    },
+    {
+      x: '口碑',
+      seriesField: '部门',
+      y: 60,
+    },
+    {
+      x: '产量',
+      seriesField: '个人',
+      y: 40,
+    },
+    {
+      x: '产量',
+      seriesField: '团队',
+      y: 50,
+    },
+    {
+      x: '产量',
+      seriesField: '部门',
+      y: 60,
+    },
+    {
+      x: '贡献',
+      seriesField: '个人',
+      y: 70,
+    },
+    {
+      x: '贡献',
+      seriesField: '团队',
+      y: 70,
+    },
+    {
+      x: '贡献',
+      seriesField: '部门',
+      y: 50,
+    },
+    {
+      x: '热度',
+      seriesField: '个人',
+      y: 50,
+    },
+    {
+      x: '热度',
+      seriesField: '团队',
+      y: 40,
+    },
+    {
+      x: '热度',
+      seriesField: '部门',
+      y: 30,
+    },
+    {
+      x: '引用',
+      seriesField: '个人',
+      y: 40,
+    },
+    {
+      x: '引用',
+      seriesField: '团队',
+      y: 60,
+    },
+    {
+      x: '引用',
+      seriesField: '部门',
+      y: 40,
+    },
+  ],
+};

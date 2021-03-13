@@ -102,7 +102,6 @@ export default defineComponent({
                 <a-button
                   type="primary"
                   html-type="submit"
-                  size="large"
                   block
                   loading={loading.value}
                 >

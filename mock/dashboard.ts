@@ -7,10 +7,13 @@ import {
   rankList,
   searchData,
   pieData,
+  projects,
+  movements,
+  radarData,
+  teams,
 } from '../schemes/dashboard';
 
 export default [
-  // 用户登录
   {
     url: '/api/dashboard/overview',
     method: 'get',
@@ -29,4 +32,50 @@ export default [
       };
     },
   },
+
+  {
+    url: '/api/workplace/projects',
+    method: 'get',
+    response: () => {
+      return {
+        code: 'S_00000',
+        data: projects,
+      };
+    },
+  },
+
+  {
+    url: '/api/workplace/movements',
+    method: 'get',
+    response: () => {
+      return {
+        code: 'S_00000',
+        data: movements,
+      };
+    },
+  },
+
+  {
+    url: '/api/workplace/radar',
+    method: 'get',
+    response: () => {
+      return {
+        code: 'S_00000',
+        data: radarData,
+      };
+    },
+  },
+
+  {
+    url: '/api/workplace/teams',
+    method: 'get',
+    response: () => {
+      return {
+        code: 'S_00000',
+        data: teams,
+      };
+    },
+  },
+
+
 ] as MockMethod[];

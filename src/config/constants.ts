@@ -2,6 +2,8 @@ export const primaryColor = '#5B8FF9';
 
 export const textColor = 'rgba(0, 0, 0, .65)';
 
+export const defaultLocale = 'zh-CN';
+
 export const i18nUseCookie = {
   cookieKey: 'ant_design_vue3_admin_i18n',
   expires: 365,
