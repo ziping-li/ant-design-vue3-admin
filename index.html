@@ -18,8 +18,9 @@
       import userMock from './mock/user';
       import notificationMock from './mock/notification';
       import menuMock from './mock/menu';
+      import dashboardMock from './mock/dashboard';
 
-      createProdMockServer([...userMock, ...notificationMock, ...menuMock]);
+      createProdMockServer([...userMock, ...notificationMock, ...menuMock, ...dashboardMock]);
 
       const app = createApp(App);
 

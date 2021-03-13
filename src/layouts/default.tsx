@@ -19,7 +19,7 @@ export default defineComponent({
     };
 
     return () => (
-      <a-layout id="layout">
+      <a-layout id="layout" class={isMobile.value ? 'mobile' : 'desk'}>
         {isMobile.value ? (
           <a-drawer
             class="layout-drawer"

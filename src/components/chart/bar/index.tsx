@@ -75,7 +75,7 @@ export default defineComponent({
           formatter: props.tooltipFormatter,
         };
       }
-      if (props.data[0].seriesField) {
+      if (props.data[0]?.seriesField) {
         options.seriesField = 'seriesField';
       }
       bar = new Column(produceId, options);

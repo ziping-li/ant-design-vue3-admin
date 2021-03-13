@@ -30,3 +30,13 @@ export interface Menu {
 }
 
 export type Lang = 'en-US' | 'zh-CN';
+
+export interface Overview {
+  miniBar: any[];
+  miniArea: any[];
+  barData: any[];
+  barData2: any[];
+  rankList: Record<any, any>;
+  searchData: Record<any, any>;
+  pieData: Record<any, any>;
+}

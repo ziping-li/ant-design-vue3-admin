@@ -8,28 +8,19 @@
 </route> */
 }
 import { computed, defineComponent, onMounted } from 'vue';
-import { useToggle } from '@ant-design-vue/use';
 import { useI18n } from 'vue-i18n';
+import { useStore } from 'vuex';
 import { InfoCircleOutlined, EllipsisOutlined } from '@ant-design/icons-vue';
 import { numeral } from '@convue-lib/utils';
 import { Datum } from '@antv/g2plot';
-import { Lang } from '../../config/types';
-import {
-  miniArea,
-  miniBar,
-  barData,
-  barData2,
-  rankList,
-  searchData,
-  pieData,
-} from '../../../schemes/charts';
+import { ActionTypes } from '../../store/dashboard';
 
 export default defineComponent({
   setup() {
-    const [loading, { toggle }] = useToggle(true);
     const { t, locale } = useI18n();
-
-    const rankLocaleList = computed(() => rankList[locale.value as Lang]);
+    const { state, dispatch } = useStore();
+    const loading = computed(() => state['@@loading'].effects[ActionTypes.OVERVIEW]);
+    const overview = computed(() => state.dashboard.overview);
 
     const searchTableColumns = computed(() => [
       {
@@ -53,18 +44,19 @@ export default defineComponent({
         slots: { customRender: 'range' },
       },
     ]);
-    const searchLocaleData = computed(() => searchData[locale.value as Lang]);
 
-    const pieLocaleData = computed(() => pieData[locale.value as Lang]);
-
-    onMounted(() => {
-      setTimeout(() => {
-        toggle();
-      }, 1000);
+    onMounted(async () => {
+      try {
+        await dispatch(ActionTypes.OVERVIEW);
+      } catch (err) {
+        console.log(err);
+      }
     });
 
+    // const rankLocaleList = computed(() => rankList[locale.value as Lang]);
+
     return () => (
-      <div class="px-4 pb-4">
+      <div class="px-5 pb-5">
         <a-row gutter={[20, 20]}>
           <a-col span={24} sm={24} md={12} xl={6}>
             <chart-card
@@ -126,7 +118,7 @@ export default defineComponent({
               <div style="transform: translateY(10px);">
                 <chart-mini-area
                   line
-                  data={miniArea}
+                  data={overview.value.miniArea}
                   formatter={(datum: Datum) => ({ name: t('Overview.Visits'), value: datum.y })}
                 ></chart-mini-area>
               </div>
@@ -153,7 +145,7 @@ export default defineComponent({
             >
               <div style="transform: translateY(10px);">
                 <chart-mini-bar
-                  data={miniBar}
+                  data={overview.value.miniBar}
                   formatter={(datum: Datum) => ({ name: t('Overview.Payments'), value: datum.y })}
                 ></chart-mini-bar>
               </div>
@@ -241,7 +233,7 @@ export default defineComponent({
                 <a-col xl={16} lg={12} md={12} sm={24} xs={24}>
                   <div class="p-8 pr-md-0 pt-md-0">
                     <chart-bar
-                      data={barData}
+                      data={overview.value.barData}
                       title={t('Overview.SalesTrend')}
                       tooltipFormatter={(datum: Datum) => ({
                         name: t('Overview.Sales'),
@@ -253,7 +245,7 @@ export default defineComponent({
                 <a-col xl={8} lg={12} md={12} sm={24} xs={24}>
                   <rank-list
                     title={t('Overview.SalesRanking')}
-                    list={rankLocaleList.value}
+                    list={overview.value.rankList[locale.value] || []}
                   ></rank-list>
                 </a-col>
               </a-row>
@@ -272,7 +264,7 @@ export default defineComponent({
                 <a-col xl={16} lg={12} md={12} sm={24} xs={24}>
                   <div class="p-8 pr-md-0 pt-md-0">
                     <chart-bar
-                      data={barData2}
+                      data={overview.value.barData2}
                       title={t('Overview.VisitsTrend')}
                       tooltipFormatter={(datum: Datum) => ({
                         name: t('Overview.Sales'),
@@ -284,7 +276,7 @@ export default defineComponent({
                 <a-col xl={8} lg={12} md={12} sm={24} xs={24}>
                   <rank-list
                     title={t('Overview.VisitsRanking')}
-                    list={rankLocaleList.value}
+                    list={overview.value.rankList[locale.value] || []}
                   ></rank-list>
                 </a-col>
               </a-row>
@@ -336,7 +328,7 @@ export default defineComponent({
                   ></number-info>
                   <div class="mt-2">
                     <chart-mini-area
-                      data={miniBar}
+                      data={overview.value.miniBar}
                       formatter={(datum: Datum) => ({
                         name: t('Overview.SearchUsers'),
                         value: datum.y,
@@ -362,7 +354,7 @@ export default defineComponent({
                   ></number-info>
                   <div class="mt-2">
                     <chart-mini-area
-                      data={miniBar}
+                      data={overview.value.miniBar}
                       formatter={(datum: Datum) => ({
                         name: t('Overview.PerCapitaSearch'),
                         value: datum.y,
@@ -375,7 +367,7 @@ export default defineComponent({
                 row-key="index"
                 size="small"
                 columns={searchTableColumns.value}
-                dataSource={searchLocaleData.value}
+                dataSource={overview.value.searchData[locale.value] || []}
                 pagination={{ pageSize: 5 }}
                 v-slots={{
                   range: (scope: any) => {
@@ -422,7 +414,7 @@ export default defineComponent({
             >
               <chart-pie
                 title={t('Overview.Sales')}
-                data={pieLocaleData.value}
+                data={overview.value.pieData[locale.value] || []}
                 inner-radius={0.6}
               ></chart-pie>
             </a-card>

@@ -74,7 +74,6 @@ export default defineComponent({
                 type="primary"
                 ghost
                 block
-                onClick={() => navigateTo(`/message?type=${activeKey.value}`)}
               >
                 {t('Components.ViewAll')}
               </a-button>
