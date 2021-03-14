@@ -95,7 +95,7 @@ export default {
     RankWithinTheTeam: 'Rank within the team',
     ProjectVisit: 'Project visit',
     Welcome: 'Good morning, {name}, start your work day!',
-    Description: 'Front-end Engineer | Xen Capital-XX Business Group-VUE Platform',
+    Description: 'Front-end Engineer {\'|\'} Xen Capital-XX Business Group-VUE Platform',
     ProjectInProgress: 'Project in progress',
     AllProject: 'All Project',
     Movement: 'Movement',

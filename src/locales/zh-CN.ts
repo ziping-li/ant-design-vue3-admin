@@ -96,7 +96,7 @@ export default {
     RankWithinTheTeam: '团队内排名',
     ProjectVisit: '项目访问',
     Welcome: '上午好，{name}，开始您一天的工作吧！',
-    Description: '前端工程师 | 施源资本 - 某某某事业群 - VUE平台',
+    Description: '前端工程师 {\'|\'} 施源资本 - 某某某事业群 - VUE平台',
     ProjectInProgress: '进行中的项目',
     AllProject: '全部项目',
     Movement: '动态',
