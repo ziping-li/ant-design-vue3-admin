@@ -11,8 +11,8 @@ import { defineComponent, computed, onMounted } from 'vue';
 import { useStore } from 'vuex';
 import { useI18n } from 'vue-i18n';
 import { PlusOutlined } from '@ant-design/icons-vue';
-import { ActionTypes } from '../../store/dashboard';
-import './workplace.less';
+import { ActionTypes } from '../../../store/dashboard';
+import './index.less';
 
 export default defineComponent({
   setup() {

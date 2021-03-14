@@ -7,7 +7,7 @@
       title: t('BasicForm.Head.Title')
 </route> */
 }
-import { defineComponent, reactive, toRaw, watch } from 'vue';
+import { defineComponent, reactive, toRaw } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useForm } from '@ant-design-vue/use';
 
@@ -33,35 +33,31 @@ export default defineComponent({
         {
           required: true,
           message: t('BasicForm.NameValidator'),
-          trigger: 'change',
         },
       ],
       buildTime: [
         {
           required: true,
+          type: 'array',
           message: t('BasicForm.BuildTimeValidator'),
-          trigger: 'change',
         },
       ],
       description: [
         {
           required: true,
           message: t('BasicForm.DescriptionValidator'),
-          trigger: 'change',
         },
       ],
       type: [
         {
           required: true,
           message: t('BasicForm.TypeValidator'),
-          trigger: 'change',
         },
       ],
       customer: [
         {
           required: true,
           message: t('BasicForm.CustomerValidator'),
-          trigger: 'change',
         },
       ],
     });
@@ -78,7 +74,7 @@ export default defineComponent({
     };
 
     return () => (
-      <div>
+      <>
         <page-header title={t('BasicForm.Title')}>
           <span>{t('BasicForm.PageDescription')}</span>
         </page-header>
@@ -132,7 +128,11 @@ export default defineComponent({
                   <a-radio value={3}>{t('BasicForm.Private')}</a-radio>
                 </a-radio-group>
                 <a-form-item v-show={toRaw(formState).target === 2}>
-                  <a-select style="width: 200px" mode="multiple" v-model={[formState.people, 'value']}>
+                  <a-select
+                    style="width: 200px"
+                    mode="multiple"
+                    v-model={[formState.people, 'value']}
+                  >
                     <a-select-option value={4}>{t('BasicForm.Option.A')}</a-select-option>
                     <a-select-option value={5}>{t('BasicForm.Option.B')}</a-select-option>
                     <a-select-option value={6}>{t('BasicForm.Option.C')}</a-select-option>
@@ -151,7 +151,7 @@ export default defineComponent({
             </a-form>
           </a-card>
         </div>
-      </div>
+      </>
     );
   },
 });

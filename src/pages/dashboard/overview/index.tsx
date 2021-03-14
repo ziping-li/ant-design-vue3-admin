@@ -13,7 +13,7 @@ import { useStore } from 'vuex';
 import { InfoCircleOutlined, EllipsisOutlined } from '@ant-design/icons-vue';
 import { numeral } from '@convue-lib/utils';
 import { Datum } from '@antv/g2plot';
-import { ActionTypes } from '../../store/dashboard';
+import { ActionTypes } from '../../../store/dashboard';
 
 export default defineComponent({
   setup() {
