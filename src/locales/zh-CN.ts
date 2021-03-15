@@ -183,47 +183,43 @@ export default {
     Again: '再转一笔',
     Check: '查看账单',
   },
-  AdvancedForm: {
-    Title: '复杂表单',
-    Head: {
-      Title: '复杂表单 - Ant Design Admin',
-    },
-  },
-  SearchList: {
-    Title: '查询表格',
-    Head: {
-      Title: '查询表格 - Ant Design Admin',
-    },
-  },
-  CardList: {
-    Title: '卡片列表',
-    Head: {
-      Title: '卡片列表 - Ant Design Admin',
-    },
-  },
-  BasicProfile: {
-    Title: '基础详情页',
-    Head: {
-      Title: '基础详情页 - Ant Design Admin',
-    },
-  },
   SuccessResult: {
     Title: '成功页',
     Head: {
       Title: '成功页 - Ant Design Admin',
     },
+    ResultTitle: '提交成功',
+    Description:
+      '提交结果页用于反馈一系列操作任务的处理结果， 如果仅是简单操作，使用 Message 全局提示反馈即可。 本文字区域可以展示简单的补充说明，如果有类似展示 “单据”的需求，下面这个灰色区域可以呈现比较复杂的内容。',
+    Return: '返回列表',
+    Project: '查看项目',
+    Print: '打印',
+    OperateTitle: '项目名称',
+    OperateId: '项目 ID',
+    Principal: '负责人',
+    OperateTime: '生效时间',
+    Step1Title: '创建项目',
+    Step1Operator: '曲丽丽',
+    Step2Title: '部门初审',
+    Step2Operator: '周毛毛',
+    Step2Extra: '催一下',
+    Step3Title: '财务复核',
+    Step4Title: '完成',
   },
   FailResult: {
     Title: '失败页',
     Head: {
       Title: '失败页 - Ant Design Admin',
     },
-  },
-  Message: {
-    Title: '消息中心',
-    Head: {
-      Title: '消息中心 - Ant Design Admin',
-    },
+    ResultTitle: '提交失败',
+    Description: '请核对并修改以下信息后，再重新提交。',
+
+    HintTitle: '您提交的内容有如下错误：',
+    HintText1: '您的账户已被冻结',
+    HintBtn1: '立即解冻',
+    HintText2: '您的账户还不具备申请资格',
+    HintBtn2: '立即升级',
+    BtnText: '返回修改',
   },
   PersonalCenter: {
     Title: '个人中心',

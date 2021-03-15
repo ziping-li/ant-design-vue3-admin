@@ -38,48 +38,9 @@ export default {
           path: '/form/step',
           permissionCode: 'view:form_step',
         },
-        {
-          id: 7,
-          name: 'Advanced Form',
-          path: '/form/advanced',
-          permissionCode: 'view:form_advanced',
-        },
       ],
     },
-    {
-      id: 8,
-      name: 'List',
-      icon: 'TableOutlined',
-      permissionCode: 'view:list',
-      children: [
-        {
-          id: 9,
-          name: 'Search Table',
-          path: '/list/search',
-          permissionCode: 'view:list_search',
-        },
-        {
-          id: 10,
-          name: 'Card List',
-          path: '/list/card',
-          permissionCode: 'view:list_card',
-        },
-      ],
-    },
-    {
-      id: 11,
-      name: 'Profile',
-      icon: 'ProfileOutlined',
-      permissionCode: 'view:profile',
-      children: [
-        {
-          id: 12,
-          name: 'Basic Profile',
-          path: '/profile/basic',
-          permissionCode: 'view:profile_basic',
-        }
-      ],
-    },
+
     {
       id: 13,
       name: 'Result',
@@ -159,46 +120,6 @@ export default {
           path: '/form/step',
           permissionCode: 'view:form_step',
         },
-        {
-          id: 7,
-          name: '复杂表单',
-          path: '/form/advanced',
-          permissionCode: 'view:form_advanced',
-        },
-      ],
-    },
-    {
-      id: 8,
-      name: '列表页',
-      icon: 'TableOutlined',
-      permissionCode: 'view:list',
-      children: [
-        {
-          id: 9,
-          name: '查询表格',
-          path: '/list/search',
-          permissionCode: 'view:list_search',
-        },
-        {
-          id: 10,
-          name: '卡片列表',
-          path: '/list/card',
-          permissionCode: 'view:list_card',
-        },
-      ],
-    },
-    {
-      id: 11,
-      name: '详情页',
-      icon: 'ProfileOutlined',
-      permissionCode: 'view:profile',
-      children: [
-        {
-          id: 12,
-          name: '基础详情页',
-          path: '/profile/basic',
-          permissionCode: 'view:profile_basic',
-        }
       ],
     },
     {

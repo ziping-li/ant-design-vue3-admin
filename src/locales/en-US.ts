@@ -186,47 +186,43 @@ export default {
     Again: 'Make another stroke',
     Check: 'View bill',
   },
-  AdvancedForm: {
-    Title: 'Advanced Form',
-    Head: {
-      Title: 'Advanced Form - Ant Design Admin',
-    },
-  },
-  SearchList: {
-    Title: 'Search List',
-    Head: {
-      Title: 'Search List - Ant Design Admin',
-    },
-  },
-  CardList: {
-    Title: 'Card List',
-    Head: {
-      Title: 'Card List - Ant Design Admin',
-    },
-  },
-  BasicProfile: {
-    Title: 'Basic Profile',
-    Head: {
-      Title: 'Basic Profile - Ant Design Admin',
-    },
-  },
   SuccessResult: {
     Title: 'Success',
     Head: {
       Title: 'Success - Ant Design Admin',
     },
+    ResultTitle: 'Submitted successfully',
+    Description:
+      'The submission result page is used to feed back the processing results of a series of operation tasks. If it is only a simple operation, use the Message global prompt to give feedback. This text area can display simple supplementary instructions. If there is a similar need to display "documents", the following gray area can present more complex content. ',
+    Return: 'Return to list',
+    Project: 'View project',
+    Print: 'Print',
+    OperateTitle: 'Project name',
+    OperateId: 'Project ID',
+    Principal: 'Person in charge',
+    OperateTime: 'effective time',
+    Step1Title: 'Create project',
+    Step1Operator: 'Qu Lili',
+    Step2Title: 'Department Initial Review',
+    Step2Operator: 'Zhou Maomao',
+    Step2Extra: 'Hurry up',
+    Step3Title: 'Financial Review',
+    Step4Title: 'Finish',
   },
   FailResult: {
     Title: 'Fail',
     Head: {
       Title: 'Fail - Ant Design Admin',
     },
-  },
-  Message: {
-    Title: 'Message',
-    Head: {
-      Title: 'Message - Ant Design Admin',
-    },
+    ResultTitle: 'Submission failed',
+    Description: 'Please check and modify the following information before submitting again. ',
+
+    HintTitle: 'The content you submitted has the following errors:',
+    HintText1: 'Your account has been frozen',
+    HintBtn1: 'Unfreeze immediately',
+    HintText2: 'Your account is not yet eligible to apply',
+    HintBtn2: 'Upgrade now',
+    BtnText: 'Return to modify',
   },
   PersonalCenter: {
     Title: 'Personal Center',
