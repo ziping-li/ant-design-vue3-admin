@@ -1,9 +1,10 @@
-import { defineComponent, ref, getCurrentInstance, onMounted, computed } from 'vue';
+import { defineComponent, ref, onMounted, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useStore } from 'vuex';
 import { BellOutlined } from '@ant-design/icons-vue';
 import { useToggle, useClickAway } from '@ant-design-vue/use';
-import { ActionTypes, Notification } from '../../store/index';
+import { ActionTypes } from '../../store/index';
+import { Notification } from '../../config/types';
 import './index.less';
 
 export default defineComponent({
@@ -13,7 +14,6 @@ export default defineComponent({
   setup() {
     const { state, dispatch } = useStore();
     const { t } = useI18n();
-    const navigateTo = getCurrentInstance()?.appContext.config.globalProperties.$navigateTo;
 
     const notifyRef: any = ref<HTMLElement>();
     const bellRef: any = ref<HTMLElement>();
@@ -69,12 +69,7 @@ export default defineComponent({
                   <notification-list data={getNotificationsByType(3)}></notification-list>
                 </a-tab-pane>
               </a-tabs>
-              <a-button
-                class="check-all-button"
-                type="primary"
-                ghost
-                block
-              >
+              <a-button class="check-all-button" type="primary" ghost block>
                 {t('Components.ViewAll')}
               </a-button>
             </div>

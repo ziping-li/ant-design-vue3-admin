@@ -278,4 +278,69 @@ export default {
     Other: 'This project uses a set of vite plugins similar to umi.js, document reference',
     Button: 'Try another account',
   },
+  PhoneComponent: {
+    Title: 'Phone',
+    Head: {
+      Title: 'Phone-Ant Design Admin',
+    },
+    PageDescription:
+      'An input component that supports international phone numbers, refer to the document:',
+    Basic: 'Basic use',
+    DefaultValue: 'Default value',
+    ChangeCode: 'Change the default country code',
+    Separator: 'Set the link symbol',
+    NoNeedCode: 'No country code needed',
+    CheckPhone: 'Form verification',
+    Validate: 'Validate',
+    Required: 'Please enter your phone number',
+    PhoneError: 'Please enter the correct phone number',
+  },
+  OtpSendComponent: {
+    Title: 'Send verification code',
+    Head: {
+      Title: 'Send Verification Code-Ant Design Admin',
+    },
+    PageDescription:
+      'A component used to send mobile phone or email verification code, refer to the document:',
+    Basic: 'Basic use',
+    ChangeButton: 'Change Type',
+    ChangeText: 'Modify the text (multilingual input)',
+    Send: 'Send',
+    Chache: 'Set cache',
+    Duration: 'Disabled duration',
+  },
+  OtpInputComponent: {
+    Title: 'Verification code input',
+    Head: {
+      Title: 'Verification code input-Ant Design Admin',
+    },
+    PageDescription: 'A component used to enter the verification code, refer to the document:',
+    Basic: 'Basic use',
+    Autofocus: 'Autofocus',
+    Numbers: 'Limit the number',
+    Size: 'Size',
+    CustomStyle: 'Custom Style',
+    Validate: 'Error message',
+  },
+  FormattedComponent: {
+    Title: 'Formatted input',
+    Head: {
+      Title: 'Formatted Input-Ant Design Admin',
+    },
+    PageDescription: 'A component used to format input, refer to the document:',
+    Currency: 'Amount thousandths',
+    Date: 'Date input',
+  },
+  ScrollComponent: {
+    Title: 'Scrolling component',
+    Head: {
+      Title: 'Scrolling Component-Ant Design Admin',
+    },
+    PageDescription: 'A component for scrolling, refer to the document:',
+    Currency: 'Amount thousandths',
+    Date: 'Date input',
+    Basic: 'Basic use',
+    Direction: 'Vertical scroll',
+    Bar: 'Display scroll bar',
+  },
 };

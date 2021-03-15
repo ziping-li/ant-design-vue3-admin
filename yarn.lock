@@ -1110,51 +1110,48 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@convue-lib/data-table@^0.1.13":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@convue-lib/data-table/-/data-table-0.1.13.tgz#cd102780344cfb8c230a7c646a8430d2f0ce2e58"
-  integrity sha512-JUDgRc0+ZPrU/5WlkmPDua5GyKJsORECs9ej1n6hM/THAS9EGj8L9tLd02UCi5bNS7ZzBG/01FzlCTV9E2QrKg==
+"@convue-lib/formatted@^0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@convue-lib/formatted/-/formatted-0.1.20.tgz#fdc404d4cd93b8728184951557167e2b70b5f8cd"
+  integrity sha512-+xdfC9khZ8sapP0bQnT2XNZaFlm2Ij6jo1aE94lmnx5AotHa6vBMHAkqCPHGEzG7EDvo3wtLVGyGjJHWUHDiFQ==
   dependencies:
-    "@convue-lib/data-view" "^0.1.13"
-    "@convue-lib/utils" "^0.1.13"
+    cleave.js "^1.6.0"
 
-"@convue-lib/data-view@^0.1.13":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@convue-lib/data-view/-/data-view-0.1.13.tgz#b816b857cd0559937fb3e988fde2a5f8a8b911a7"
-  integrity sha512-5yL6J3bHNKlS5nisEZRDWLiUS3/4Q89q5226VtxsniVEMmM+Dfs3/6PrVriUP0WYu+TJAKjzCFStTRuZD2e4/Q==
+"@convue-lib/otp-input@^0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@convue-lib/otp-input/-/otp-input-0.1.20.tgz#c1f2b9bb708e7b8494c2eb50f360f048f65f9ae7"
+  integrity sha512-qR5mS40euzQNVBFV6qG3nOMKqL5v3EsC9bd1gYugUlFWm71A8YQisD3oPznyrgNjipr54mDhlV+09uzMiivUyA==
+
+"@convue-lib/otp-send@^0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@convue-lib/otp-send/-/otp-send-0.1.20.tgz#a65ea8cdac0507f4306cfe43e809517f518ad320"
+  integrity sha512-uz/ERU5NxTGD4fQ4wxNpw/S+UiV7VwnQqkyP46r9/O0mNLswF4Tx1XzTrG9xdhvbiyMvTqGbCczPXpSpordSQw==
   dependencies:
-    "@convue-lib/utils" "^0.1.13"
+    "@convue-lib/utils" "^0.1.20"
 
-"@convue-lib/scroll@0.1.13":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@convue-lib/scroll/-/scroll-0.1.13.tgz#98cda68587e49a4746d2614dcf03fc5ac8ff2604"
-  integrity sha512-lnoaAV1xy1NYOrL8MyCz8/LHuLfC0u3PjRNzImaEFCPMtmmz0YtatQxmag84pOkRXd5Mp/ZiLj1lbgjYucbflw==
+"@convue-lib/phone@0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@convue-lib/phone/-/phone-0.1.20.tgz#c71821526e5564e5d5bfb5891e380d7cc1e6ca79"
+  integrity sha512-bF70r0LqyRzLcwk5L1UmFDZG0wMFzXz1Fibxgj/3lDN0VFzECvL6SICbJWBe5/YL5cH2NmefJuqYiRRste0Wzw==
   dependencies:
-    "@convue-lib/utils" "^0.1.13"
+    "@convue-lib/utils" "^0.1.20"
 
-"@convue-lib/styles@^0.1.12":
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/@convue-lib/styles/-/styles-0.1.12.tgz#0d24d5751202e02c609fb702f094d13adca0f386"
-  integrity sha512-33BZiQrPqsPi5wWR5p7cJpCwhKHETQ82wBgSaHm/looAWg9LBy3VIQpceU/MeShHiVhEp3jPl/e9w/E26R+M2Q==
-
-"@convue-lib/utils@^0.1.12":
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/@convue-lib/utils/-/utils-0.1.12.tgz#f708bd3514d7dcabdeceec42eacec5bf4e05cb86"
-  integrity sha512-gFLXf1F0hshphCaXhd7zLnnFzdQ/QhjpgWBmAr+lbN3u/QMtcCQ8/QqkGxw2UUsqYiM9QQaWA6NUCccDotRP9A==
+"@convue-lib/scroll@0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@convue-lib/scroll/-/scroll-0.1.20.tgz#7d22a49fed32b5e041f7aa573fddffd6903a88e4"
+  integrity sha512-/6p5BhwbrETGiHntkUHtle5hiIE6N0URlOCjzmwn+ivki9J4vWkP0biS5hlgAgCRzfgOnK9nGedL+mQaa3zDsA==
   dependencies:
-    awesome-phonenumber "^2.45.0"
-    dayjs "^1.10.4"
-    enquire.js "^2.1.6"
-    is-mergeable-object "^1.1.1"
-    lodash.debounce "^4.0.8"
-    lodash.throttle "^4.1.1"
-    numeral "^2.0.6"
-    xss "^1.0.8"
+    "@convue-lib/utils" "^0.1.20"
 
-"@convue-lib/utils@^0.1.13":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@convue-lib/utils/-/utils-0.1.13.tgz#87ef08f5f17dbc7c02c2ca1edf16dbb867496fd2"
-  integrity sha512-FpsSXCtcBJttbdqTXGHUuQvoCAEZatjU3JBCDKWZialBk3PZDXAGNPcecPjht8bHF2wH5F9lNz9ZnJTUENDBbg==
+"@convue-lib/styles@^0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@convue-lib/styles/-/styles-0.1.20.tgz#eca4fa4aa6796f4a65bf3ab4515b2f84cd655079"
+  integrity sha512-2WH7EZKycRPe7eLUi3ZWeI+6J8FynRMJE5Ytz60K1tWseLLfuDRDaPPCx3lyUw9oHRYHqEGfOL41icRip2Mz4A==
+
+"@convue-lib/utils@^0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@convue-lib/utils/-/utils-0.1.20.tgz#840b258b6877ecb4f66a3e0251c1da998e1af99e"
+  integrity sha512-gebAf/OrIJww9ziCT75ihJXtjrVlxkTyF2Ktugq1dgDvrn7IcitaJqXu27Wn9UHH+ZBtTaXhmlmJDVOuba/ovg==
   dependencies:
     awesome-phonenumber "^2.45.0"
     dayjs "^1.10.4"
@@ -2260,6 +2257,11 @@ clean-stack@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-2.2.0.tgz#ee8472dbb129e727b31e8a10a427dee9dfe4008b"
   integrity sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==
+
+cleave.js@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/cleave.js/-/cleave.js-1.6.0.tgz#0e4e011943bdd70c67c9dcf4ff800ce710529171"
+  integrity sha512-ivqesy3j5hQVG3gywPfwKPbi/7ZSftY/UNp5uphnqjr25yI2CP8FS2ODQPzuLXXnNLi29e2+PgPkkiKUXLs/Nw==
 
 cli-cursor@^3.1.0:
   version "3.1.0"

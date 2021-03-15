@@ -224,26 +224,33 @@ export default {
   AuthorityRoute: {
     Title: '路由权限',
     Head: {
-      Title: '路由权限 - Ant Design Admin'
+      Title: '路由权限 - Ant Design Admin',
     },
-    PageDescription: '只有拥有该页面权限代码（view:authority_route）的用户才能访问，否则会重定向到 403 页面',
+    PageDescription:
+      '只有拥有该页面权限代码（view:authority_route）的用户才能访问，否则会重定向到 403 页面',
     Rule: '使用规则',
-    Rule1: '1. 在用户信息接口中返回的权限字段中包括一组权限代码（含路由权限代码），参考路径：/schemes/user.ts',
+    Rule1:
+      '1. 在用户信息接口中返回的权限字段中包括一组权限代码（含路由权限代码），参考路径：/schemes/user.ts',
     Rule2: '2. 保存接口返回的用户信息vuex，包括 permissions，参考路径：/src/store/index.ts',
-    Rule3: '3. 定义页面的路由信息字段 permissionCode 为该页面对应的权限代码，参考路径：/src/pages/authority/route.tsx',
-    Rule4: '4. 在路由拦截器中判断用户权限代码中是否包含即将跳转的路由权限代码，参考路径：/src/middleware/permission.ts',
+    Rule3:
+      '3. 定义页面的路由信息字段 permissionCode 为该页面对应的权限代码，参考路径：/src/pages/authority/route.tsx',
+    Rule4:
+      '4. 在路由拦截器中判断用户权限代码中是否包含即将跳转的路由权限代码，参考路径：/src/middleware/permission.ts',
     Other: '本项目使用了一套类似于 umi.js 的 vite 插件，文档参考',
     Button: '换个账号试试',
   },
   AuthorityMenu: {
     Title: '菜单权限',
     Head: {
-      Title: '菜单权限 - Ant Design Admin'
+      Title: '菜单权限 - Ant Design Admin',
     },
-    PageDescription: '只有拥有该页面权限代码（view:authority_menu）的用户并且菜单配置中存在，才会在菜单中显示',
+    PageDescription:
+      '只有拥有该页面权限代码（view:authority_menu）的用户并且菜单配置中存在，才会在菜单中显示',
     Rule: '使用规则',
-    Rule1: '1. 在用户信息接口中返回的权限字段中包括一组权限代码（含路由权限代码），参考路径：/schemes/user.ts',
-    Rule2: '2. 在菜单接口中返回配置项，如果菜单不存在 permissionCode 则默认会显示，参考路径：/schemes/menu.ts',
+    Rule1:
+      '1. 在用户信息接口中返回的权限字段中包括一组权限代码（含路由权限代码），参考路径：/schemes/user.ts',
+    Rule2:
+      '2. 在菜单接口中返回配置项，如果菜单不存在 permissionCode 则默认会显示，参考路径：/schemes/menu.ts',
     Rule3: '3. 在 vuex 中生成该用户的菜单配置项，参考路径：/src/store/index.ts',
     Other: '本项目使用了一套类似于 umi.js 的 vite 插件，文档参考',
     Button: '换个账号试试',
@@ -251,14 +258,79 @@ export default {
   AuthorityOperate: {
     Title: '操作权限',
     Head: {
-      Title: '操作权限 - Ant Design Admin'
+      Title: '操作权限 - Ant Design Admin',
     },
     PageDescription: '只有拥有操作权限代码的用户，才会显示对应的操作',
     Rule: '使用规则',
-    Rule1: '1. 在用户信息接口中返回的权限字段中包括一组权限代码（含操作权限代码），参考路径：/schemes/user.ts',
+    Rule1:
+      '1. 在用户信息接口中返回的权限字段中包括一组权限代码（含操作权限代码），参考路径：/schemes/user.ts',
     Rule2: '2. 保存接口返回的用户信息到 vuex，包括 permissions，参考路径：/src/store/index.ts',
-    Rule3: '3. 通过组件 authority 控制操作的显示（如果组件的 props 没传 code 则默认显示），参考路径：/src/components/authority/index.tsx',
+    Rule3:
+      '3. 通过组件 authority 控制操作的显示（如果组件的 props 没传 code 则默认显示），参考路径：/src/components/authority/index.tsx',
     Other: '本项目使用了一套类似于 umi.js 的 vite 插件，文档参考',
     Button: '换个账号试试',
-  }
+  },
+  PhoneComponent: {
+    Title: '电话',
+    Head: {
+      Title: '电话 - Ant Design Admin',
+    },
+    PageDescription: '一个支持国际电话号码的输入组件，参考文档：',
+    Basic: '基本使用',
+    DefaultValue: '默认值',
+    ChangeCode: '改变默认的国家码',
+    Separator: '设置链接符',
+    NoNeedCode: '不需要国家码',
+    CheckPhone: '表单验证',
+    Validate: '验证',
+    Required: '请输入手机号',
+    PhoneError: '请输入正确的手机号',
+  },
+  OtpSendComponent: {
+    Title: '发送验证码',
+    Head: {
+      Title: '发送验证码 - Ant Design Admin',
+    },
+    PageDescription: '一个用于发送手机或邮箱验证码的组件，参考文档：',
+    Basic: '基本使用',
+    ChangeButton: '改变类型',
+    ChangeText: '修改文案（多语言传入）',
+    Send: '发送',
+    Chache: '设置缓存',
+    Duration: '禁用时长',
+  },
+  OtpInputComponent: {
+    Title: '验证码输入',
+    Head: {
+      Title: '验证码输入 - Ant Design Admin',
+    },
+    PageDescription: '一个用于输入验证码的组件，参考文档：',
+    Basic: '基本使用',
+    Autofocus: '自动聚焦',
+    Numbers: '限制个数',
+    Size: '尺寸',
+    CustomStyle: '自定义样式',
+    Validate: '错误信息',
+  },
+  FormattedComponent: {
+    Title: '格式化输入',
+    Head: {
+      Title: '格式化输入 - Ant Design Admin',
+    },
+    PageDescription: '一个用于格式化输入的组件，参考文档：',
+    Currency: '金额千分位',
+    Date: '日期输入',
+  },
+  ScrollComponent: {
+    Title: '滚动组件',
+    Head: {
+      Title: '滚动组件 - Ant Design Admin',
+    },
+    PageDescription: '一个用于滚动的组件，参考文档：',
+    Currency: '金额千分位',
+    Date: '日期输入',
+    Basic: '基本使用',
+    Direction: '纵向滚动',
+    Bar: '显示滚动条',
+  },
 };

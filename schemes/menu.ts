@@ -106,6 +106,44 @@ export default {
         },
       ],
     },
+    {
+      id: 23,
+      name: 'Component',
+      icon: 'ControlOutlined',
+      permissionCode: 'view:components',
+      children: [
+        {
+          id: 24,
+          name: 'Phone',
+          path: '/components/phone',
+          permissionCode: 'view:components_phone',
+        },
+        {
+          id: 25,
+          name: 'Send code',
+          path: '/components/otp-send',
+          permissionCode: 'view:components_otp-send',
+        },
+        {
+          id: 26,
+          name: 'Enter code',
+          path: '/components/otp-input',
+          permissionCode: 'view:components_otp-input',
+        },
+        {
+          id: 27,
+          name: 'Formatted',
+          path: '/components/formatted-input',
+          permissionCode: 'view:components_formatted',
+        },
+        {
+          id: 28,
+          name: 'Scroll',
+          path: '/components/scroll',
+          permissionCode: 'view:components_scroll',
+        },
+      ],
+    },
   ],
   'zh-CN': [
     {
@@ -210,6 +248,44 @@ export default {
           name: '操作权限',
           path: '/authority/operate',
           permissionCode: 'view:authority_operate',
+        },
+      ],
+    },
+    {
+      id: 23,
+      name: '组件',
+      icon: 'ControlOutlined',
+      permissionCode: 'view:components',
+      children: [
+        {
+          id: 24,
+          name: '电话',
+          path: '/components/phone',
+          permissionCode: 'view:components_phone',
+        },
+        {
+          id: 25,
+          name: '发送验证码',
+          path: '/components/otp-send',
+          permissionCode: 'view:components_otp-send',
+        },
+        {
+          id: 26,
+          name: '输入验证码',
+          path: '/components/otp-input',
+          permissionCode: 'view:components_otp-input',
+        },
+        {
+          id: 27,
+          name: '格式化输入',
+          path: '/components/formatted-input',
+          permissionCode: 'view:components_formatted',
+        },
+        {
+          id: 28,
+          name: '滚动',
+          path: '/components/scroll',
+          permissionCode: 'view:components_scroll',
         },
       ],
     },
