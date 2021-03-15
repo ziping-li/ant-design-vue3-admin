@@ -32,6 +32,7 @@ export default {
       Title: 'Login - Ant Design Admin',
     },
     Description: 'Welcome to Ant Design Admin, Please login',
+    Note: 'Note: admin has all permissions, user has some permissions',
     Username: 'Username',
     Password: 'Password',
     Login: 'Login',
@@ -224,16 +225,57 @@ export default {
     HintBtn2: 'Upgrade now',
     BtnText: 'Return to modify',
   },
-  PersonalCenter: {
-    Title: 'Personal Center',
+  AuthorityRoute: {
+    Title: 'Routing permissions',
     Head: {
-      Title: 'Personal Center - Ant Design Admin',
+      Title: 'Routing Permission - Ant Design Admin',
     },
+    PageDescription:
+      'Only users who have the authority code of the page (view:authority_route) can access it, otherwise it will be redirected to the 403 page',
+    Rule: 'Use rules',
+    Rule1:
+      '1. Include a set of permission codes (including routing permission codes) in the permission field returned in the user information interface, reference path: /schemes/user.ts',
+    Rule2:
+      '2. Save the user information returned by the interface vuex, including permissions, reference path: /src/store/index.ts',
+    Rule3:
+      '3. Define the routing information field permissionCode of the page as the permission code corresponding to the page, reference path: /src/pages/authority/route.tsx',
+    Rule4:
+      '4. In the route interceptor, judge whether the user permission code contains the routing permission code to be redirected, reference path: /src/middleware/permission.ts',
+    Other: 'This project uses a set of vite plugins similar to umi.js, document reference',
+    Button: 'Try another account',
   },
-  AccountSetting: {
-    Title: 'Account Setting',
+  AuthorityMenu: {
+    Title: 'Menu permissions',
     Head: {
-      Title: 'Account Setting - Ant Design Admin',
+      Title: 'Menu permissions - Ant Design Admin',
     },
+    PageDescription:
+      'Only users who have the page authority code (view:authority_menu) and exist in the menu configuration will be displayed in the menu',
+    Rule: 'Use rules',
+    Rule1:
+      '1. Include a set of permission codes (including routing permission codes) in the permission field returned in the user information interface, reference path: /schemes/user.ts',
+    Rule2:
+      '2. Return the configuration item in the menu interface. If the permissionCode does not exist in the menu, it will be displayed by default. Reference path: /schemes/menu.ts',
+    Rule3:
+      "3. Generate the user's menu configuration item in vuex, reference path: /src/store/index.ts",
+    Other: 'This project uses a set of vite plugins similar to umi.js, document reference',
+    Button: 'Try another account',
+  },
+  AuthorityOperate: {
+    Title: 'Operation authority',
+    Head: {
+      Title: 'Operation Authority - Ant Design Admin',
+    },
+    PageDescription:
+      'Only users who have the operation authority code will display the corresponding operation',
+    Rule: 'Use rules',
+    Rule1:
+      '1. Include a set of permission codes (including operation permission codes) in the permission field returned in the user information interface, reference path: /schemes/user.ts',
+    Rule2:
+      '2. Save the user information returned by the interface to vuex, including permissions, reference path: /src/store/index.ts',
+    Rule3:
+      "3. Control the display of the operation through the component authority (if the component's props does not pass the code, it will be displayed by default), reference path: /src/components/authority/index.tsx",
+    Other: 'This project uses a set of vite plugins similar to umi.js, document reference',
+    Button: 'Try another account',
   },
 };

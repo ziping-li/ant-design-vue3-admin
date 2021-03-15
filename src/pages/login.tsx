@@ -28,8 +28,8 @@ export default defineComponent({
     const loginForm = ref(null);
     const loading = computed(() => state['@@loading'].effects[ActionTypes.LOGIN]);
     const formState: Record<string, string> = reactive({
-      username: 'admin',
-      password: '123456',
+      username: '',
+      password: '',
     });
     const rules = reactive({
       username: [
@@ -69,6 +69,7 @@ export default defineComponent({
         <div class="page">
           <div class="logo" />
           <div class="description">{t('Login.Description')}</div>
+          <p class="description">{t('Login.Note')}</p>
           <div class="login-page">
             <a-form
               layout="vertical"
@@ -82,7 +83,7 @@ export default defineComponent({
                   v-model={[formState.username, 'value']}
                   size="large"
                   v-slots={{ prefix: () => <UserOutlined style="color: rgba(0, 0, 0, 0.25)" /> }}
-                  placeholder={t('Login.Username')}
+                  placeholder='admin/user'
                   autocomplete="off"
                 ></a-input>
               </a-form-item>
@@ -94,7 +95,7 @@ export default defineComponent({
                   v-slots={{
                     prefix: () => <LockOutlined style="color: rgba(0, 0, 0, 0.25)" />,
                   }}
-                  placeholder={t('Login.Password')}
+                  placeholder="123456"
                   autocomplete="off"
                 ></a-input>
               </a-form-item>

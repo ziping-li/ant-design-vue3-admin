@@ -1,4 +1,4 @@
-import { defineComponent, computed, getCurrentInstance } from 'vue';
+import { defineComponent, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useStore } from 'vuex';
 import { useRoute } from 'vue-router';
@@ -17,8 +17,6 @@ export default defineComponent({
     const route = useRoute();
 
     const userInfo = computed(() => state.userInfo);
-    const navigateTo = getCurrentInstance()?.appContext.config.globalProperties.$navigateTo;
-
     const selectedKeys = computed(() => [route.fullPath]);
 
     return () => (
@@ -28,10 +26,10 @@ export default defineComponent({
         v-slots={{
           overlay: () => (
             <a-menu slot="overlay" v-model={[selectedKeys.value, 'selectedKeys']}>
-              <a-menu-item key="/personal/info" onClick={() => navigateTo('/personal/info')}>
+              <a-menu-item disabled key="/personal/info">
                 <UserOutlined /> {t('Components.PersonalCenter')}
               </a-menu-item>
-              <a-menu-item key="/personal/setting" onClick={() => navigateTo('/personal/setting')}>
+              <a-menu-item disabled key="/personal/setting">
                 <SettingOutlined /> {t('Components.PersonalSetting')}
               </a-menu-item>
               <a-menu-divider />

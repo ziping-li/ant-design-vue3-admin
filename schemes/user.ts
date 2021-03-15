@@ -22,6 +22,13 @@ export default [
       'view:result',
       'view:result_success',
       'view:result_fail',
+      'view:authority',
+      'view:authority_route',
+      'view:authority_menu',
+      'view:authority_operate',
+      'add:authority_operate',
+      'delete:authority_operate',
+      'update:authority_operate',
     ],
   },
   {
@@ -47,6 +54,8 @@ export default [
       'view:result',
       'view:result_success',
       'view:result_fail',
+      'view:authority',
+      'view:authority_operate',
     ],
   },
 ];

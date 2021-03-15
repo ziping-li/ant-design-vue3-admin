@@ -32,6 +32,7 @@ export default {
       Title: '登录 - Ant Design Admin',
     },
     Description: '欢迎来到 Ant Design Admin, 请登录',
+    Note: '说明：admin 拥有所有权限，user 拥有部分权限',
     Username: '用户名',
     Password: '密码',
     Login: '登录',
@@ -213,7 +214,6 @@ export default {
     },
     ResultTitle: '提交失败',
     Description: '请核对并修改以下信息后，再重新提交。',
-
     HintTitle: '您提交的内容有如下错误：',
     HintText1: '您的账户已被冻结',
     HintBtn1: '立即解冻',
@@ -221,16 +221,44 @@ export default {
     HintBtn2: '立即升级',
     BtnText: '返回修改',
   },
-  PersonalCenter: {
-    Title: '个人中心',
+  AuthorityRoute: {
+    Title: '路由权限',
     Head: {
-      Title: '个人中心 - Ant Design Admin',
+      Title: '路由权限 - Ant Design Admin'
     },
+    PageDescription: '只有拥有该页面权限代码（view:authority_route）的用户才能访问，否则会重定向到 403 页面',
+    Rule: '使用规则',
+    Rule1: '1. 在用户信息接口中返回的权限字段中包括一组权限代码（含路由权限代码），参考路径：/schemes/user.ts',
+    Rule2: '2. 保存接口返回的用户信息vuex，包括 permissions，参考路径：/src/store/index.ts',
+    Rule3: '3. 定义页面的路由信息字段 permissionCode 为该页面对应的权限代码，参考路径：/src/pages/authority/route.tsx',
+    Rule4: '4. 在路由拦截器中判断用户权限代码中是否包含即将跳转的路由权限代码，参考路径：/src/middleware/permission.ts',
+    Other: '本项目使用了一套类似于 umi.js 的 vite 插件，文档参考',
+    Button: '换个账号试试',
   },
-  AccountSetting: {
-    Title: '账户设置',
+  AuthorityMenu: {
+    Title: '菜单权限',
     Head: {
-      Title: '账户设置 - Ant Design Admin',
+      Title: '菜单权限 - Ant Design Admin'
     },
+    PageDescription: '只有拥有该页面权限代码（view:authority_menu）的用户并且菜单配置中存在，才会在菜单中显示',
+    Rule: '使用规则',
+    Rule1: '1. 在用户信息接口中返回的权限字段中包括一组权限代码（含路由权限代码），参考路径：/schemes/user.ts',
+    Rule2: '2. 在菜单接口中返回配置项，如果菜单不存在 permissionCode 则默认会显示，参考路径：/schemes/menu.ts',
+    Rule3: '3. 在 vuex 中生成该用户的菜单配置项，参考路径：/src/store/index.ts',
+    Other: '本项目使用了一套类似于 umi.js 的 vite 插件，文档参考',
+    Button: '换个账号试试',
   },
+  AuthorityOperate: {
+    Title: '操作权限',
+    Head: {
+      Title: '操作权限 - Ant Design Admin'
+    },
+    PageDescription: '只有拥有操作权限代码的用户，才会显示对应的操作',
+    Rule: '使用规则',
+    Rule1: '1. 在用户信息接口中返回的权限字段中包括一组权限代码（含操作权限代码），参考路径：/schemes/user.ts',
+    Rule2: '2. 保存接口返回的用户信息到 vuex，包括 permissions，参考路径：/src/store/index.ts',
+    Rule3: '3. 通过组件 authority 控制操作的显示（如果组件的 props 没传 code 则默认显示），参考路径：/src/components/authority/index.tsx',
+    Other: '本项目使用了一套类似于 umi.js 的 vite 插件，文档参考',
+    Button: '换个账号试试',
+  }
 };

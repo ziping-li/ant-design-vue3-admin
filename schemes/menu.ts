@@ -80,6 +80,32 @@ export default {
         },
       ],
     },
+    {
+      id: 19,
+      name: 'Authority',
+      icon: 'ControlOutlined',
+      permissionCode: 'view:authority',
+      children: [
+        {
+          id: 20,
+          name: 'Route',
+          path: '/authority/route',
+          permissionCode: 'view:authority_route',
+        },
+        {
+          id: 20,
+          name: 'Menu',
+          path: '/authority/menu',
+          permissionCode: 'view:authority_route',
+        },
+        {
+          id: 22,
+          name: 'Operate',
+          path: '/authority/operate',
+          permissionCode: 'view:authority_operate',
+        },
+      ],
+    },
   ],
   'zh-CN': [
     {
@@ -158,6 +184,32 @@ export default {
           name: '404',
           path: '/404',
           permissionCode: 'view:404',
+        },
+      ],
+    },
+    {
+      id: 19,
+      name: '权限',
+      icon: 'ControlOutlined',
+      permissionCode: 'view:authority',
+      children: [
+        {
+          id: 20,
+          name: '路由权限',
+          path: '/authority/route',
+          permissionCode: 'view:authority_route',
+        },
+        {
+          id: 20,
+          name: '菜单权限',
+          path: '/authority/menu',
+          permissionCode: 'view:authority_route',
+        },
+        {
+          id: 22,
+          name: '操作权限',
+          path: '/authority/operate',
+          permissionCode: 'view:authority_operate',
         },
       ],
     },
