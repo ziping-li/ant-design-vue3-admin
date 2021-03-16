@@ -12,6 +12,7 @@ import {
 
 export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
+    base: './',
     css: {
       preprocessorOptions: {
         less: {
@@ -54,5 +55,8 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         modules: ['ant-design-vue'],
       }),
     ],
+    build: {
+      outDir: './docs'
+    }
   };
 };
