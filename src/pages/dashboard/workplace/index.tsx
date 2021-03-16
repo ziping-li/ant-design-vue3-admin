@@ -12,6 +12,7 @@ import { useStore } from 'vuex';
 import { useI18n } from 'vue-i18n';
 import { PlusOutlined } from '@ant-design/icons-vue';
 import { ActionTypes } from '../../../store/dashboard';
+import { base } from '../../../config/constants';
 import './index.less';
 
 export default defineComponent({
@@ -56,7 +57,7 @@ export default defineComponent({
         >
           <div class="page-header-content">
             <div class="avatar">
-              <a-avatar size="large" src="/avatar.jpg" />
+              <a-avatar size="large" src={`${base}/avatar.jpg`} />
             </div>
             <div class="content">
               <div class="content-title">

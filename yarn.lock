@@ -6297,7 +6297,7 @@ vite-plugin-mock@^2.2.0:
     rollup "^2.40.0"
     rollup-plugin-esbuild "^2.6.1"
 
-vite@^2.0.0-beta.50:
+vite@^2.0.0-beta.69:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.1.0.tgz#fdaab9cca360a88b654eaf942d13be29ed0958eb"
   integrity sha512-qWYmX8slkv91C3hWA2iu0o0ZvFbO2dSfWIN4dbMfSeMdNn+XeirkGWU3dy5/W1Nv13cQZvVoMTl8zyC13VFRZQ==

@@ -4,6 +4,7 @@ import { useStore } from 'vuex';
 import { useRoute } from 'vue-router';
 import { UserOutlined, SettingOutlined, PoweroffOutlined } from '@ant-design/icons-vue';
 import { logout } from '../../plugins/utils';
+import { base } from '../../config/constants';
 
 export default defineComponent({
   components: {
@@ -43,7 +44,7 @@ export default defineComponent({
       >
         <head-item>
           <a-space>
-            <a-avatar src="/avatar.jpg" size={22}></a-avatar>
+            <a-avatar src={`${base}/avatar.jpg`} size={22}></a-avatar>
             <span>{userInfo.value.nickname}</span>
           </a-space>
         </head-item>

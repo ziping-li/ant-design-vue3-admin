@@ -1,3 +1,5 @@
+export const base = '/ant-design-vue3-admin';
+
 export const primaryColor = '#5B8FF9';
 
 export const textColor = 'rgba(0, 0, 0, .65)';

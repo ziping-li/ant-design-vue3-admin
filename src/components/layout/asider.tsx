@@ -6,6 +6,7 @@ import * as antIcons from '@ant-design/icons-vue';
 import Scroll from '@convue-lib/scroll';
 import { ActionTypes } from '../../store/index';
 import { Menu } from '../../config/types';
+import {base} from '../../config/constants';
 
 const Icons: any = antIcons;
 
@@ -57,7 +58,7 @@ export default defineComponent({
       <>
         <router-link to="/" class="logo">
           <a-space>
-            <img alt="logo" height="32" src="/logo.png" />
+            <img alt="logo" height="32" src={`${base}/logo.png`} />
             {!props.collapsed && <span class="title">Ant Design Admin</span>}
           </a-space>
         </router-link>
