@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint --ext .js,.tsx src/",
+    "lint": "eslint --ext .ts,.tsx src/",
     "lint:fix": "yarn run lint --fix"
   },
   "husky": {
@@ -15,8 +15,9 @@
     }
   },
   "lint-staged": {
-    "*.{vue,js}": [
-      "eslint --fix"
+    "*.{tsx,ts}": [
+      "eslint --fix",
+      "git add"
     ]
   },
   "devDependencies": {
