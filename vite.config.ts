@@ -12,7 +12,7 @@ import {
 
 export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
-    base: './',
+    base: '/ant-design-vue3-admin',
     css: {
       preprocessorOptions: {
         less: {
