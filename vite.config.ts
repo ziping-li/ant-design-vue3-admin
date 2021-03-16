@@ -12,7 +12,7 @@ import {
 
 export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
-    base: '/ant-design-vue3-admin',
+    base: './',
     css: {
       preprocessorOptions: {
         less: {
@@ -42,6 +42,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         },
         page: {
           router: {
+            history: 'hash',
             scrollBehavior: () => {
               return { x: 0, y: 0 };
             },
