@@ -62,51 +62,6 @@ export default {
       ],
     },
     {
-      id: 16,
-      name: 'Exception',
-      icon: 'WarningOutlined',
-      children: [
-        {
-          id: 17,
-          name: '403',
-          path: '/403',
-          permissionCode: 'view:403',
-        },
-        {
-          id: 18,
-          name: '404',
-          path: '/404',
-          permissionCode: 'view:404',
-        },
-      ],
-    },
-    {
-      id: 19,
-      name: 'Authority',
-      icon: 'ControlOutlined',
-      permissionCode: 'view:authority',
-      children: [
-        {
-          id: 20,
-          name: 'Route',
-          path: '/authority/route',
-          permissionCode: 'view:authority_route',
-        },
-        {
-          id: 20,
-          name: 'Menu',
-          path: '/authority/menu',
-          permissionCode: 'view:authority_route',
-        },
-        {
-          id: 22,
-          name: 'Operate',
-          path: '/authority/operate',
-          permissionCode: 'view:authority_operate',
-        },
-      ],
-    },
-    {
       id: 23,
       name: 'Component',
       icon: 'ControlOutlined',
@@ -141,6 +96,112 @@ export default {
           name: 'Scroll',
           path: '/components/scroll',
           permissionCode: 'view:components_scroll',
+        },
+      ],
+    },
+    {
+      id: 19,
+      name: 'Authority',
+      icon: 'ControlOutlined',
+      permissionCode: 'view:authority',
+      children: [
+        {
+          id: 20,
+          name: 'Route',
+          path: '/authority/route',
+          permissionCode: 'view:authority_route',
+        },
+        {
+          id: 20,
+          name: 'Menu',
+          path: '/authority/menu',
+          permissionCode: 'view:authority_route',
+        },
+        {
+          id: 22,
+          name: 'Operate',
+          path: '/authority/operate',
+          permissionCode: 'view:authority_operate',
+        },
+      ],
+    },
+
+    {
+      id: 16,
+      name: 'Exception',
+      icon: 'WarningOutlined',
+      children: [
+        {
+          id: 17,
+          name: '403',
+          path: '/403',
+          permissionCode: 'view:403',
+        },
+        {
+          id: 18,
+          name: '404',
+          path: '/404',
+          permissionCode: 'view:404',
+        },
+      ],
+    },
+    {
+      id: 29,
+      name: 'Editor',
+      icon: 'EditOutlined',
+      permissionCode: 'view:editor',
+      children: [
+        {
+          id: 30,
+          name: 'Rich Text',
+          path: '/editor/wangeditor',
+          permissionCode: 'view:editor_wangeditor',
+        },
+        {
+          id: 31,
+          name: 'Markdown',
+          path: '/editor/markdown',
+          permissionCode: 'view:editor_markdown',
+        },
+      ],
+    },
+    {
+      id: 32,
+      name: 'Picture Process',
+      icon: 'FileImageOutlined',
+      permissionCode: 'view:image',
+      children: [
+        {
+          id: 33,
+          name: 'Crop',
+          path: '/image/crop',
+          permissionCode: 'view:image_crop',
+        },
+        {
+          id: 34,
+          name: 'Preview',
+          path: '/image/preview',
+          permissionCode: 'view:image_preview',
+        },
+      ],
+    },
+    {
+      id: 35,
+      name: 'Map',
+      icon: 'GlobalOutlined',
+      permissionCode: 'view:map',
+      children: [
+        {
+          id: 36,
+          name: 'Baidu Map',
+          path: '/map/baidu',
+          permissionCode: 'view:map_baidu',
+        },
+        {
+          id: 37,
+          name: 'AMap',
+          path: '/map/gaode',
+          permissionCode: 'view:map_gaode',
         },
       ],
     },
@@ -207,51 +268,6 @@ export default {
       ],
     },
     {
-      id: 16,
-      name: '异常页',
-      icon: 'WarningOutlined',
-      children: [
-        {
-          id: 17,
-          name: '403',
-          path: '/403',
-          permissionCode: 'view:403',
-        },
-        {
-          id: 18,
-          name: '404',
-          path: '/404',
-          permissionCode: 'view:404',
-        },
-      ],
-    },
-    {
-      id: 19,
-      name: '权限',
-      icon: 'ControlOutlined',
-      permissionCode: 'view:authority',
-      children: [
-        {
-          id: 20,
-          name: '路由权限',
-          path: '/authority/route',
-          permissionCode: 'view:authority_route',
-        },
-        {
-          id: 20,
-          name: '菜单权限',
-          path: '/authority/menu',
-          permissionCode: 'view:authority_route',
-        },
-        {
-          id: 22,
-          name: '操作权限',
-          path: '/authority/operate',
-          permissionCode: 'view:authority_operate',
-        },
-      ],
-    },
-    {
       id: 23,
       name: '组件',
       icon: 'ControlOutlined',
@@ -286,6 +302,112 @@ export default {
           name: '滚动',
           path: '/components/scroll',
           permissionCode: 'view:components_scroll',
+        },
+      ],
+    },
+    {
+      id: 19,
+      name: '权限',
+      icon: 'ControlOutlined',
+      permissionCode: 'view:authority',
+      children: [
+        {
+          id: 20,
+          name: '路由权限',
+          path: '/authority/route',
+          permissionCode: 'view:authority_route',
+        },
+        {
+          id: 20,
+          name: '菜单权限',
+          path: '/authority/menu',
+          permissionCode: 'view:authority_route',
+        },
+        {
+          id: 22,
+          name: '操作权限',
+          path: '/authority/operate',
+          permissionCode: 'view:authority_operate',
+        },
+      ],
+    },
+    {
+      id: 16,
+      name: '异常页',
+      icon: 'WarningOutlined',
+      children: [
+        {
+          id: 17,
+          name: '403',
+          path: '/403',
+          permissionCode: 'view:403',
+        },
+        {
+          id: 18,
+          name: '404',
+          path: '/404',
+          permissionCode: 'view:404',
+        },
+      ],
+    },
+
+    {
+      id: 29,
+      name: '编辑器',
+      icon: 'EditOutlined',
+      permissionCode: 'view:editor',
+      children: [
+        {
+          id: 30,
+          name: '富文本',
+          path: '/editor/wangeditor',
+          permissionCode: 'view:editor_wangeditor',
+        },
+        {
+          id: 31,
+          name: 'Markdown',
+          path: '/editor/markdown',
+          permissionCode: 'view:editor_markdown',
+        },
+      ],
+    },
+    {
+      id: 32,
+      name: '图片处理',
+      icon: 'FileImageOutlined',
+      permissionCode: 'view:image',
+      children: [
+        {
+          id: 33,
+          name: '裁剪',
+          path: '/image/crop',
+          permissionCode: 'view:image_crop',
+        },
+        {
+          id: 34,
+          name: '预览',
+          path: '/image/preview',
+          permissionCode: 'view:image_preview',
+        },
+      ],
+    },
+    {
+      id: 35,
+      name: '地图',
+      icon: 'GlobalOutlined',
+      permissionCode: 'view:map',
+      children: [
+        {
+          id: 36,
+          name: '百度地图',
+          path: '/map/baidu',
+          permissionCode: 'view:map_baidu',
+        },
+        {
+          id: 37,
+          name: '高德地图',
+          path: '/map/gaode',
+          permissionCode: 'view:map_gaode',
         },
       ],
     },

@@ -333,4 +333,18 @@ export default {
     Direction: '纵向滚动',
     Bar: '显示滚动条',
   },
+  WangEditor: {
+    Title: '富文本编辑器',
+    Head: {
+      Title: '富文本编辑器 - Ant Design Admin',
+    },
+    PageDescription: '富文本编辑器使用 wangEditor ，参考文档：',
+  },
+  Markdown: {
+    Title: 'Markdown 编辑器',
+    Head: {
+      Title: 'Markdown 编辑器 - Ant Design Admin',
+    },
+    PageDescription: 'Markdown 编辑器使用 tui.editor ，参考文档：',
+  }
 };

@@ -25,6 +25,7 @@
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@types/highlight.js": "^10.1.0",
     "@types/js-cookie": "^2.2.6",
     "@types/uuid": "^8.3.0",
     "@vitejs/plugin-vue": "^1.1.2",
@@ -67,8 +68,12 @@
     "@convue-lib/scroll": "0.1.20",
     "@convue-lib/styles": "^0.1.20",
     "@convue-lib/utils": "^0.1.20",
+    "@toast-ui/editor": "^2.5.1",
+    "@toast-ui/editor-plugin-code-syntax-highlight": "^1.0.0",
     "ant-design-vue": "^2.0.1",
     "axios": "^0.21.1",
+    "highlight.js": "^10.6.0",
+    "i18next": "^19.9.2",
     "js-cookie": "^2.2.1",
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
@@ -76,6 +81,7 @@
     "vue": "^3.0.5",
     "vue-i18n": "^9.0.0-rc.6",
     "vue-router": "4",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "wangeditor": "^4.6.9"
   }
 }
